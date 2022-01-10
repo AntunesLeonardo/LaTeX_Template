@@ -37,6 +37,16 @@
 \newcommand{\note}{\newcommand{\@note}}
 \newcommand{\professor}{\newcommand{\@professor}}
 
+\newcommand{\simplespacing}{
+    \renewcommand\baselinestretch{1}
+    \setlength{\parskip}{0pt}
+}
+
+\newcommand{\textspacing}{
+    \renewcommand\baselinestretch{1.5}
+    \setlength{\parskip}{6pt}
+}
+
 
 
 
