@@ -20,6 +20,9 @@
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
 
+\renewcommand{\appendixtocname}{Ap\^endice}
+\renewcommand{\appendixpagename}{Ap\^endice}
+
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\small{\thepage}}
