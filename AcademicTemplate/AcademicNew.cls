@@ -7,7 +7,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[style=abnt, giveninits, extrayear, repeatfields, backend=biber, uniquename=init]{biblatex}
 \usepackage[titletoc,toc,page]{appendix}
-\usepackage{fancyhdr, graphicx, float}
+\usepackage{fancyhdr, graphicx, svg, float}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{lipsum, booktabs}
 \usepackage{times, cuted}
