@@ -1,0 +1,96 @@
+% =========================================================
+% Exemples File
+% =========================================================
+
+% Seções --------------------------------------------------
+
+\section{Seção de Exemplo} % <-- Título da seção
+\label{sec:e1}
+
+    Uma seção se parece com isso.
+
+\subsection{Subseção de Exemplo} % <-- Título da subseção
+\label{sec:e2}
+
+    Uma subseção se parece com isso.
+
+\subsubsection{Subsubseção de Exemplo} % <-- Título da subsubseção
+\label{sec:e3}
+
+    Uma subsubseção se parece com isso.
+
+\addcontentsline{toc}{section}{Seção Não Enumerada} % <-- Título da seção
+\section*{Seção Não Enumerada} % <-- Título da seção
+
+    Assim se parece uma seção não enumerada.
+    Subseções e subsubseções também podem ser não enumeradas basta incluir o asterisco (*) no comando.
+    As labels não funcionam bem em seções não enumeradas.
+
+\section{Imagens}
+\label{sec:imagens}
+
+    A figura \ref{fig:e4} é um exemplo de imagem sozinha.
+    A imagem pode ser referenciada com o comando \lstinline[language=TeX, style=TeX]|\ref{}|.
+
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=120pt]{images/figure.png}
+        \caption{Legenda.}
+        \label{fig:e4}
+    \end{figure}
+
+    As images também podem ser utilizadas lado a lado:
+
+    \begin{figure}
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=120pt]{images/figure.png}
+            \caption{Legenda figura PNG.}
+            \label{fig:e6}
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            %\includesvg[width=120pt]{images/figure.svg}
+            \caption{Legenda figura SVG.}
+            \label{fig:e7}
+        \end{minipage}
+    \end{figure}
+
+\section{Código Fonte}
+\label{sec:codigo}
+
+    Texto texto texto texto texto texto texto texto texto texto texto
+    \lstinline[language=Python, style=Python]|def incmatrix(genl1,genl2)|
+
+\begin{lstlisting}[language=Python, style=Python]
+import numpy as np 
+
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+                
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+                
+                VT = np.zeros((n*m,1), int)
+    
+    return M
+\end{lstlisting}
