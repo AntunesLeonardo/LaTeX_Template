@@ -58,15 +58,16 @@
 
 % Figuras lado a lado -------------------------------------
 
-    \begin{figure}
+    \begin{figure}[htb]
         \centering
-        \begin{minipage}{0.49\textwidth}
+        \begin{minipage}{7.5cm}
             \centering
             \includegraphics[width=120pt]{images/figure.png}
             \caption{Legenda figura PNG.}
             \label{fig:e5}
         \end{minipage}
-        \begin{minipage}{0.49\textwidth}
+        \hfill
+        \begin{minipage}{7.5cm}
             \centering
             \includegraphics[width=120pt]{images/figure.pdf}
             \caption{Legenda figura PDF.}
@@ -76,6 +77,24 @@
 
     Caso esteja usando este template no Overleaf, também é fácil utilizar imagens em SVG com o comando \lstinline[language=TeX, style=Code]|\includesvg|.
     Porém, fora do Overleaf é um tanto trabalhoso e compensa converter o SVG em PDF.
+
+    \begin{figure}[htb]
+        \centering
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura ao lado do texto.}
+            \label{fig:texto_do_lado}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{7.5cm}
+            \linespread{1.5}\selectfont
+            
+            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{7.5cm}|.
+            Nesse modo também é possível inverter onde vai o texto ou a figura, de acordo com qual aparece antes no código fonte.
+
+        \end{minipage}
+    \end{figure}
 
 % Tabelas =================================================
 
@@ -201,6 +220,38 @@ def jacobi(A,b,N=25,x=None):
      objects, and retrieve information from the Internet to facilitate their adaptive
     functionality \cite{weber2010internet}.}
 
+% Multicolunas ============================================
+
+\section{Multicolunas}
+\label{sec:multicolunas}
+
+% Multicolunas para texto ---------------------------------
+
+    \begin{multicols}{2}
+        O ambiente \lstinline[language=TeX,style=code]|{multicols}{2}| gera multiplas colunas no documento.
+        O segundo parâmetro é o número de colunas geradas.
+
+        O texto é justificado automaticamente.
+        No entanto, elementos flutuantes como figuras e tabelas não podem ser inclusos no ambiente normalmente.
+
+        Para incluir figuras deve ser utilizado o ambiente \lstinline[language=TeX,style=code]|{figure*}{tb}| no lugar do tradicional \lstinline[language=TeX,style=code]|{figure}{htb}|.
+        No entando, as figuras não são posicionados no meio do texto, mas sim no topo ou base da página, ignorando a divisão das colunas.
+
+        É comum que, nesse caso, a figura apareça somente na página seguinte.
+        Por isso, recomendo que, se possível, evite usar figuras nesse ambiente.
+
+% Figura (que ignora as colunas) --------------------------
+
+        \begin{figure*}[bt]
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura PNG.}
+            \label{fig:coluna_dupla}
+        \end{figure*}
+        
+        \lipsum[1][1-10]
+    \end{multicols}
+
 % Expressões Matemáticas ==================================
 
 \section{Expressões Matemáticas}
@@ -230,3 +281,5 @@ def jacobi(A,b,N=25,x=None):
         x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
         \label{eq:baskara}
     \end{equation}
+
+

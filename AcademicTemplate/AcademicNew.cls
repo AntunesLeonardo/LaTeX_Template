@@ -24,6 +24,7 @@
 \usepackage{lipsum, booktabs, multirow}
 \usepackage{times, cuted, xparse}
 \usepackage{listings, csquotes}
+\usepackage{multicol, wrapfig}
 
 %\usepackage[grid]{eso-pic}
 
@@ -38,9 +39,11 @@
 \renewcommand{\baselinestretch}{1.5}
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
+\setlength{\columnsep}{1cm}
 \titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries\MakeUppercase}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
+\titleformat{name=\section,numberless}{\centering\normalsize\bfseries\MakeUppercase}{}{1em}{}
 \captionsetup{font={footnotesize,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
