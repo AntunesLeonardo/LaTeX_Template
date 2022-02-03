@@ -9,16 +9,21 @@
 \usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[style=abnt, giveninits, extrayear, repeatfields, backend=biber, uniquename=init]{biblatex}
+\usepackage[style=abnt, sorting=nty, % <-- Autor-data
+            %style=abnt-numeric, sorting=none, % <-- Numérico
+            giveninits,
+            extrayear,
+            repeatfields,
+            backend=biber,
+            uniquename=init]{biblatex}
 \usepackage[titletoc,toc,page]{appendix}
-\usepackage{fancyhdr, graphicx, svg, float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{fancyhdr, graphicx, svg, float, caption}
 \usepackage{tocloft, titlesec, hyperref}
 \usepackage{amsmath, amsfonts, amssymb}
-\usepackage{lipsum, booktabs}
-\usepackage{listings, xcolor}
-\usepackage{times, cuted}
-\usepackage{csquotes}
-
+\usepackage{lipsum, booktabs, multirow}
+\usepackage{times, cuted, xparse}
+\usepackage{listings, csquotes}
 
 %\usepackage[grid]{eso-pic}
 
@@ -36,6 +41,7 @@
 \titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries\MakeUppercase}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
+\captionsetup{font={footnotesize,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
 
@@ -46,7 +52,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\small{\thepage}}
+\fancyhead[R]{\footnotesize{\thepage}}
 \renewcommand{\headrulewidth}{0pt}
 \setlength\headheight{14pt}
 
@@ -59,31 +65,9 @@
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-% Latex ---------------------------------------------------
+% Code ----------------------------------------------------
 
-\lstdefinestyle{TeX}{
-    backgroundcolor = \color{backcolour},   
-    commentstyle = \color{codegreen},
-    keywordstyle = \color{codepurple},
-    numberstyle = \tiny\color{codegray},
-    stringstyle = \color{codepurple},
-    identifierstyle = \color{codeblue},
-    basicstyle = \ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
-}
-
-% Python --------------------------------------------------
-
-\lstdefinestyle{Python}{
+\lstdefinestyle{Code}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
@@ -124,6 +108,40 @@
 \newcommand{\textspacing}{
     \renewcommand\baselinestretch{1.5}
     \setlength{\parskip}{6pt}
+}
+
+\newcommand{\directcite}[1]{
+    \vspace{1.5cm}
+    \hfill
+    \begin{minipage}{12cm}
+        \simplespacing
+        \footnotesize{#1}
+    \end{minipage}
+    \vspace{1.5cm}
+}
+
+% Mathematical commands -----------------------------------
+
+\newcommand{\uncert}[2]{
+    \ensuremath #1 \pm #2
+}
+
+\DeclareDocumentCommand\deriv{ m m g }{%
+    {\ensuremath\frac{d\IfNoValueF{#3}{^#3} #1}{d#2\IfNoValueF{#3}{^#3}}
+    }%
+}
+
+\DeclareDocumentCommand\derivPartial{ m m g }{%
+    {\ensuremath\frac{\partial\IfNoValueF{#3}{^#3} #1}{\partial#2\IfNoValueF{#3}{^#3}}
+    }%
+}
+
+\newcommand{\sen}{
+    \ensuremath\text{sen}
+}
+
+\newcommand{\E}[1]{
+    \ensuremath\cdot 10^#1
 }
 
 % Pretextual elements =====================================

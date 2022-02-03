@@ -7,8 +7,30 @@
    viewBox="0 0 120 120"
    version="1.1"
    id="svg5"
+   sodipodi:docname="figure.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="5.3666667"
+     inkscape:cx="114.59627"
+     inkscape:cy="48.26087"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
   <defs
      id="defs2" />
   <g
@@ -47,4 +69,24 @@
          ry="26.273293" />
     </g>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;line-height:1.25;font-family:Iconic_Lettering;-inkscape-font-specification:'Iconic_Lettering, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none"
+     x="29.254658"
+     y="9.6894407"
+     id="text2699"><tspan
+       sodipodi:role="line"
+       id="tspan2697"
+       x="29.254658"
+       y="9.6894407" /></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Iconic_Lettering;-inkscape-font-specification:'Iconic_Lettering, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none"
+     x="34.560131"
+     y="65.620003"
+     id="text15271"><tspan
+       sodipodi:role="line"
+       id="tspan15269"
+       x="34.560131"
+       y="65.620003">Figure</tspan></text>
 </svg>
