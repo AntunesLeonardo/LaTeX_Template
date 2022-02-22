@@ -44,7 +44,7 @@
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
 \titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{1em}{}
-\captionsetup{font={footnotesize,stretch=1.0}}
+\captionsetup{font={footnotesize,bf,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
 
@@ -138,6 +138,10 @@
         \footnotesize{#1}
     \end{minipage}
     \vspace{1.5cm}
+}
+
+\newcommand{\quo}[1]{
+    ``#1''
 }
 
 % Mathematical commands -----------------------------------
