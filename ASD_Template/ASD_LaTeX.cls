@@ -26,7 +26,7 @@
 \usepackage{listings, csquotes}
 \usepackage{multicol, wrapfig}
 
-\usepackage[grid]{eso-pic}
+%\usepackage[grid]{eso-pic}
 
 % General Settings ========================================
 
@@ -57,7 +57,6 @@
 \fancyhf{}
 \fancyhead[LE]{\footnotesize{\MakeUppercase{\@edition\ \@theyear\ \@title}}}
 \fancyhead[RO]{\footnotesize{\MakeUppercase{\@authorabbreviate}}}
-%\fancyfoot[R]{\footnotesize{\MakeUppercase{Sysdin \@theyear}}}
 \fancyfoot[L]{\footnotesize{{\flushright{\MakeUppercase{Sysdin \@theyear}}}\\Proceedings of the\ \@edition\ \@theyear\ World Congress on System Dynamics, \@professor\ (Editor), \MakeUppercase{\@institution}, \@city, \@date, \@theyear}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -79,6 +78,8 @@
 \definecolor{codeblue}{rgb}{0,0,0.6}
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\definecolor{greencover}{RGB}{0,176,78}
 
 % Code ----------------------------------------------------
 
@@ -173,13 +174,13 @@
         \centering
         \begin{minipage}{7.5cm}
             \centering
-            \includegraphics[width=70pt]{images/figure.pdf}
+            \includegraphics[width=130pt]{images/cachoeira_ASD.jpg}
         \end{minipage}
         \hfill
         \begin{minipage}{7.5cm}
             \linespread{1.5}\selectfont
             
-            \MakeUppercase{\Huge{\@edition\ \@theyear}\\ \normalsize{\@location}}
+            \textcolor{greencover}{\MakeUppercase{\Huge{\@edition\ \@theyear}\\ \normalsize{\@location}}}
 
         \end{minipage}
     \end{figure}

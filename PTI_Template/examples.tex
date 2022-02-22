@@ -1,0 +1,285 @@
+% =========================================================
+% Exemples File
+% =========================================================
+
+% Seções e subseções ======================================
+
+% Seção enumerada ------------------------------------------
+
+\section{Seção de Exemplo} % <-- Título da seção
+\label{sec:e1}
+
+    Uma seção se parece com isso.
+
+% Sub-seção enumerada -------------------------------------
+
+\subsection{Subseção de Exemplo} % <-- Título da subseção
+\label{sec:e2}
+
+    Uma subseção se parece com isso.
+
+% Sub-sub-seção enumerada ---------------------------------
+
+\subsubsection{Subsubseção de Exemplo} % <-- Título da subsubseção
+\label{sec:e3}
+
+    Uma subsubseção se parece com isso.
+
+% Seção NÃO enumerada -------------------------------------
+
+\addcontentsline{toc}{section}{Seção Não Enumerada} % <-- Título da seção
+\section*{Seção Não Enumerada} % <-- Título da seção
+
+    Assim se parece uma seção não enumerada.
+    Subseções e subsubseções também podem ser não enumeradas basta incluir o asterisco (*) no comando.
+    As labels não funcionam bem em seções não enumeradas.
+
+% Figuras =================================================
+
+\section{Figuras}
+\label{sec:figuras}
+
+    A figura \ref{fig:e4} é um exemplo de imagem sozinha.
+    A imagem pode ser referenciada com o comando \lstinline[language=TeX, style=Code]|\ref{}|.
+
+% Figura solo ---------------------------------------------
+
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=120pt]{images/figure.png}
+        %\includesvg[width=120pt]{images/figure.svg}
+        \caption{Legenda.}
+        \label{fig:e4}
+    \end{figure}
+
+    As images também podem ser utilizadas lado a lado, como é o caso das figuras \ref{fig:e5} e \ref{fig:e6}.
+    Observe também que as figuras estão em formatos diferentes: a figura \ref{fig:e5} está em PNG, enquanto a figura \ref{fig:e6} está em PDF.
+    Isso está assim para mostrar a perda de qualidade nos formatos não vetoriais.
+
+% Figuras lado a lado -------------------------------------
+
+    \begin{figure}[htb]
+        \centering
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.png}
+            \caption{Legenda figura PNG.}
+            \label{fig:e5}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura PDF.}
+            \label{fig:e6}
+        \end{minipage}
+    \end{figure}
+
+    Caso esteja usando este template no Overleaf, também é fácil utilizar imagens em SVG com o comando \lstinline[language=TeX, style=Code]|\includesvg|.
+    Porém, fora do Overleaf é um tanto trabalhoso e compensa converter o SVG em PDF.
+
+    \begin{figure}[htb]
+        \centering
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura ao lado do texto.}
+            \label{fig:texto_do_lado}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{7.5cm}
+            \linespread{1.5}\selectfont
+            
+            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{7.5cm}|.
+            Nesse modo também é possível inverter onde vai o texto ou a figura, de acordo com qual aparece antes no código fonte.
+
+        \end{minipage}
+    \end{figure}
+
+% Tabelas =================================================
+
+\section{Tabelas}
+\label{sec:tabelas}
+
+    A inserção de tabelas é feita pelo ambiente \lstinline[language=TeX, style=Code]|tabular|, no entanto para obter resultados melhores ele é inserido dentro de outro ambiente, o \lstinline[language=TeX, style=Code]|table|.
+    A tabela \ref{tab:e7} é um exemplo.
+
+% Tabela --------------------------------------------------
+
+    \begin{table}[htb]
+        \centering
+        \caption{Exemplo de tabela}
+        \label{tab:e7}
+        \begin{tabular}{l|ccc}
+            \hline
+            \multirow{2}{*}{\textbf{Gêneros}} & \multicolumn{3}{c}{\textbf{Esportes}} \\ \cline{2-4} 
+                                              & Futebol    & Handebol    & Natação    \\ \hline
+            Masculino                         & 20         & 7           & 4          \\
+            Feminino                          & 4          & 10          & 8          \\ \hline
+            Maioria                           & 83,33\%    & 58,82\%     & 66,67\%    \\ \hline
+            \end{tabular}
+    \end{table}
+
+    Geralmente, trabalhar com tabelas diretamente no \LaTeX pode ser complicado e confuso.
+    Para facilitar isso pode-se utilizar o site \href{https://www.tablesgenerator.com}{Tables Generator}, onde é possível criar tabelas de forma mais intuitiva, ou copiar tabelas com \textit{Ctrl C - Ctrl V} de softwares como Excel.
+
+% Códigos =================================================
+
+\section{Código Fonte}
+\label{sec:codigo}
+
+    É possível incluir código fonte tanto no próprio texto com o comando \lstinline[language=TeX,style=Code]|\lstinline[]|, ou como bloco para trechos extensos com o ambiente \lstinline[language=TeX,style=Code]|lstlisting|.
+
+% Bloco de código -----------------------------------------
+
+\begin{lstlisting}[language=Python, style=Code]
+import numpy as np
+
+A = np.array([[10, 2, 1], [1, 5, 1], [2, 3, 10]], dtype=float)
+B = np.array([7, -8, 6], dtype=A.dtype)
+guess = np.array([0.7, -1.6, 0.6], dtype=A.dtype)
+
+def jacobi(A,b,N=25,x=None):
+    # Create an initial guess if needed                                                                                                                                                            
+    if x is None:
+        x = np.zeros(len(A[0]))
+
+    # Create a vector of the diagonal elements of A                                                                                                                                                
+    # and subtract them from A                                                                                                                                                                     
+    D = np.diag(A)
+    R = A - np.diagflat(D)
+
+    # Iterate for N times                                                                                                                                                                          
+    for i in range(N):
+        x = (b - np.dot(R,x)) / D
+    return x
+\end{lstlisting}
+
+    No geral o que esses comando e ambiente fazem é simplesmente não compilar o que é inserido neles.
+    As opções de linguagem e estilo são opcionais, no entanto facilitam a legibilidade.
+
+% Formatação de texto =====================================
+
+\section{Formatação de Texto}
+\label{sec:formatacao}
+
+    \begin{itemize}
+        \item \textbf{Negrito} -- \lstinline[language=TeX,style=code]|\textbf{}|
+        \item \textit{Itálico} -- \lstinline[language=TeX,style=code]|\textit{}|
+        \item \underline{Sublinhado} -- \lstinline[language=TeX,style=code]|\underline{}|
+    \end{itemize}
+
+% Listas ==================================================
+
+\section{Listas}
+\label{sec:listas}
+
+    Listas no \LaTeX\ podem ser enumeradas, ou itemizadas:
+
+% Lista enumerada -----------------------------------------
+
+    \begin{enumerate}
+        \item Primeiro item
+        \item Segundo item
+    \end{enumerate}
+
+% Lista itemizada -----------------------------------------
+
+    \begin{itemize}
+        \item Primeiro item
+        \item Segundo item
+    \end{itemize}
+
+% Citações ================================================
+
+\section{Citações}
+
+    As referências bibbliográficas devem ser inclusas no arquivo \textit{bibliography.bib}.
+    as citações, a partir das referencias inclusas, podem ser feitas de diversas formas.
+
+% Tipos de citação ----------------------------------------
+
+    \begin{itemize}
+        \item Com Autores e ano em parêntesis -- \cite{wortmann2015internet}
+        \item Com autores fora e ano dentro dos parêntesis -- \textcite{weber2010internet}
+        \item Com título fora e ano dentro dos parêntesis -- \citetitle{wortmann2015internet}
+        \item Apenas autores entre parêntesis -- \citeauthor{ashton2009internet}
+        \item Apenas o ano entre parêntesis -- \citeyear{yoo2010research}
+        \item Ou \textit{apud}, onde o primeiro autor cita o segundo -- \apud{wortmann2015internet}{yoo2010research}
+    \end{itemize}
+
+    Apenas os dois primeiros funcionam no formator de citações numéricas.
+
+    Caso a citação seja direta e ocupe mais que três linhas ela deve estar em um bloco com formatação diferente.
+    Para gerar esse bloco, neste template, utilize o comando \lstinline[language=TeX,style=code]|\directcite{}|, como mostrado a seguir.
+
+% Citação direta ------------------------------------------
+
+    \directcite{Extending the initial application scope, the IoT might also serve as backbone for
+    ubiquitous computing, enabling smart environments to recognize and identify
+     objects, and retrieve information from the Internet to facilitate their adaptive
+    functionality \cite{weber2010internet}.}
+
+% Multicolunas ============================================
+
+\section{Multicolunas}
+\label{sec:multicolunas}
+
+% Multicolunas para texto ---------------------------------
+
+    \begin{multicols}{2}
+        O ambiente \lstinline[language=TeX,style=code]|{multicols}{2}| gera multiplas colunas no documento.
+        O segundo parâmetro é o número de colunas geradas.
+
+        O texto é justificado automaticamente.
+        No entanto, elementos flutuantes como figuras e tabelas não podem ser inclusos no ambiente normalmente.
+
+        Para incluir figuras deve ser utilizado o ambiente \lstinline[language=TeX,style=code]|{figure*}{tb}| no lugar do tradicional \lstinline[language=TeX,style=code]|{figure}{htb}|.
+        No entando, as figuras não são posicionados no meio do texto, mas sim no topo ou base da página, ignorando a divisão das colunas.
+
+        É comum que, nesse caso, a figura apareça somente na página seguinte.
+        Por isso, recomendo que, se possível, evite usar figuras nesse ambiente.
+
+% Figura (que ignora as colunas) --------------------------
+
+        \begin{figure*}[bt]
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura PNG.}
+            \label{fig:coluna_dupla}
+        \end{figure*}
+        
+        \lipsum[1][1-10]
+    \end{multicols}
+
+% Expressões Matemáticas ==================================
+
+\section{Expressões Matemáticas}
+\label{sec:exmatematicas}
+
+    Expressões matemáticas podem ser inclusas de três formas:
+    no texto; em destaque sem índice; ou em destaque com índice.
+
+% Expressões no texto -------------------------------------
+
+    Para incluir as expressões no texto basta delimitá-las com sifrão (\$).
+    \lstinline[language=TeX,style=code]|$x = 2$| produz $x = 2$.
+    Em alguns casos porém, quando a expressão é naturalmente alta ela será comprimida, como frações por exemplo $\frac{3}{7}$.
+
+% Destaque - sem índice -----------------------------------
+
+    Para gerar expressões destacadas, porém sem índice, elas devem ser delimitadas por sifrões duplos (\$\$).
+    Nesse caso, \lstinline[language=teX,style=code]|$$\frac{1}{2} = 0,5$$| produz:
+    $$\frac{1}{2} = 0,5$$
+
+% Destaque - com índice -----------------------------------
+
+    Expressões matemáticas com índice utilizam o ambiente \lstinline[language=TeX,style=code]|equation|.
+    E permite que as expressões sejam referenciadas no texto, como é o caso da equação \ref{eq:baskara}.
+
+    \begin{equation}
+        x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \label{eq:baskara}
+    \end{equation}
+
+
