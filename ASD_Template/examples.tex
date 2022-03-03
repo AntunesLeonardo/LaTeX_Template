@@ -2,133 +2,284 @@
 % Exemples File
 % =========================================================
 
-\abstractAndKeyWords{
-    Não devem ser utilizados títulos genéricos como”1o Artigo de Análise de Sistemas Dinâmicos”, o título do artigo deverá refletir exatamente o que foi feito.
-    A seção de resumo deverá conter de 150 a 250 palavras (use a ferramenta “Contagem de Palavras” no menu “Revisão”) descrevendo a motivação do artigo, o que foi realizado, como foi realizado, além dos principais resultados obtidos.
-    O artigo deverá ser enviado à coordenação do evento em formato pdf, juntamente com todo o material utilizado para fazê-lo (versão em formato Word, scripts Matlab, manuscritos para dedução das equações governantes do sistema etc.).
-    O número máximo de páginas do artigo é 12, as páginas excedentes serão penalizadas com 5 pontos na nota.
-    Portanto, devem ser evitadas repetições desnecessárias.
-    As fontes ou a formatação deste documento não devem ser mudadas, devendo ser preenchidos todos os campos, inclusive cabeçalhos e rodapés.
-    Alterações serão penalizadas, em caso de dúvidas a coordenação do evento deve ser contatada.
-    As palavras-chave devem refletir o sistema dinâmico analisado e as ferramentas utilizadas (Série de Fourier Discreta, Transformada de Fourier Discreta, Função de Resposta ao Impulso, Convolução, Transformada de Laplace, Função de Resposta em Frequência, Matriz de Funções de Transferência, Equação de Estado etc.) para fazê-lo.
-    As referências devem ser citadas por nome e (ano), as referências devem ser listadas ao final do artigo em uma seção apropriada, em ordem alfabética.
-    Deverá ser utilizado preferencialmente o gerenciador de fontes bibliográficas do Word, ferramenta útil em outros trabalhos como o Trabalho de Conclusão de Curso (TCC).
-    }{1ª Palavra-chave, 2ª Palavra-chave, ...,5ª Palavra-chave (até 5 palavras-chave)}
+% Seções e subseções ======================================
 
-\section{Introdução}
+% Seção enumerada ------------------------------------------
 
-Nesta seção é esperada uma descrição \underline{detalhada} do sistema que será analisado, incluindo figuras e tabelas trazendo informações sobre os principais parâmetros deste sistema.
-Esta seção também deverá descrever as justificativas e a motivação da análise, as ferramentas utilizadas, as condições de contorno do estudo e outros informações pertinentes e relevantes.
-O artigo deverá permitir que que outros engenheiros possam reproduzir os estudos e análises apresentados.
+\section{Seção de Exemplo} % <-- Título da seção
+\label{sec:e1}
 
-As figuras, tabelas e equações devem ser numeradas na forma mostrada neste documento, devendo ser citadas pelos números e descritas de forma adequada \underline{antes} de aparecerem no texto.
-Nunca deixe uma figura, tabela ou equação dispersa no artigo.
-Por exemplo, a Figura \ref{fig:tras-trifasico} mostra a vista do sistema dinâmico analisado neste artigo, um transformador de potência trifásico 500kV/760kV, com 1000 MVA de capacidade e isolado com óleo mineral e hexafluoreto de enxofre (SF\textsubscript{6}).
-Os parâmetros principais deste transformador são mostrados na Tabela \ref{tab:dados}.
-Deverá ser utilizada preferencialmente a ferramenta \quo{Referência Cruzada}, no menu \quo{Referências}; ela é uma ferramenta muito útil para engenheiros, na redação de artigos ou relatórios técnicos.
+    Uma seção se parece com isso.
 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/transformador_trifasico.png}
-    \caption{Vista de um transformador de potência trifásico 500 kV/760 kV de 1000 MVA de capacidade.}
-    \label{fig:tras-trifasico}
-\end{figure}
+% Sub-seção enumerada -------------------------------------
 
-Observe que eventuais textos nas figuras deverão ser legíveis, usando um tamanho de fonte compatível com o tamanho utilizado nas legendas (tamanho 10).
-As legendas das figuras e tabelas devem ser capazes de permitir ao leitor extrair as principais informações sem que ele tenha que recorrer ao texto para entendê-las ou contextualizá-las.
-Exemplo de citação \cite{lathi2006sinais}.
+\subsection{Subseção de Exemplo} % <-- Título da subseção
+\label{sec:e2}
 
-\begin{table}[htb]
-    \footnotesize
-    \centering
-    \caption{Parâmetros do transformador de potência trifásico analisado}
-    \label{tab:dados}
-    \begin{tabular}{ccc}
-        \hline
-        \textbf{Parâmetro}    & \textbf{Unidade} & \textbf{Valor} \\ \hline
-        Tensões primárias     & KV               & 500            \\
-        Tensões no secundário & KV               & 760            \\
-        Capacidade            & MVA              & 1000           \\
-        Isolação              & --               & Óleo / SF6     \\ \hline
-    \end{tabular}
-\end{table}
+    Uma subseção se parece com isso.
 
-\section{Fundamentação teórica e metodologia}
+% Sub-sub-seção enumerada ---------------------------------
 
-Esta seção contém uma descrição resumida da \quo{Fundamentação Teórica} e da \quo{Metodologia} utilizadas na elaboração deste artigo.
+\subsubsection{Subsubseção de Exemplo} % <-- Título da subsubseção
+\label{sec:e3}
 
-\subsection{Fundamentação Teórica}
+    Uma subsubseção se parece com isso.
 
-Esta subseção deverá conter uma descrição resumida das ferramentas que foram utilizadas no artigo, como, por exemplo, das ferramentas de processamento de sinais (Série de Fourier Discreta, Transformada de Fourier Discreta, Transformada de Fourier de Curto Termo) e da modelagem matemática do sistema.
-Nesta seção deverá aparecer as principais equações que governam o sistema estudado.
-Por exemplo, a Equação (\ref{eq:vibracoes}) mostra as equações de movimento que descrevem as vibrações do núcleo do transformado em estudo:
+% Seção NÃO enumerada -------------------------------------
 
-\begin{equation}
-    \label{eq:vibracoes}
-    \begin{Bmatrix}
-        f_1(t) \\ f_2(t)
-        \end{Bmatrix}
-        =
-        \begin{bmatrix}
-        m_n & 0 \\
-        0 & m_n \\
-        \end{bmatrix}
-        \begin{Bmatrix}
-        \ddot{z}_1(t) \\ \ddot{z}_2(t)
-        \end{Bmatrix} 
-        +
-        \begin{bmatrix}
-        c_{n1} & 0 \\
-        0 & c_{n2} \\
-        \end{bmatrix}
-        \begin{Bmatrix}
-        \dot{z}_1(t) \\ \dot{z}_2(t)
-        \end{Bmatrix} 
-        +
-        \begin{bmatrix}
-        k_{n1} & 0 \\
-        0 & k_{n2} \\
-        \end{bmatrix}
-        \begin{Bmatrix}
-        z_1(t) \\ z_2(t)
-        \end{Bmatrix}
-        \text{,}
-\end{equation}
+\addcontentsline{toc}{section}{Seção Não Enumerada} % <-- Título da seção
+\section*{Seção Não Enumerada} % <-- Título da seção
 
-onde $f_i(t)$ são as forças eletromagnéticas de excitação nas direções $z_i (i=1,2)$.
-Ainda nesta equação $m_n$ é a massa do núcleo, $c_{ni}$ são os coeficientes de amortecimento e $k_{ni}$ são os coeficientes de rigidez, nas direções $z_i$.
+    Assim se parece uma seção não enumerada.
+    Subseções e subsubseções também podem ser não enumeradas basta incluir o asterisco (*) no comando.
+    As labels não funcionam bem em seções não enumeradas.
 
-Deve-se observar que a Equação (\ref{eq:vibracoes}) foi apresentada ao leitor como se fosse parte do texto, após a equação há uma \quo{vírgula} e o texto que segue a ela está no mesmo parágrafo, iniciado propositalmente em letra minúscula para mostrar isso.
+% Figuras =================================================
 
-Esta subseção deverá conter uma \underline{descrição resumida} das ferramentas que foram utilizadas no artigo, como, por exemplo, das ferramentas de processamento de sinais (Série de Fourier Discreta, Transformada de Fourier Discreta, Transformada de Fourier de Curto Termo) e da modelagem matemática do sistema.
+\section{Figuras}
+\label{sec:figuras}
 
-\subsection{Metodologia}
+    A figura \ref{fig:e4} é um exemplo de imagem sozinha.
+    A imagem pode ser referenciada com o comando \lstinline[language=TeX, style=Code]|\ref{}|.
 
-Nesta subseção deverá ser descrita a metodologia utilizada na análise do sistema dinâmico estudado, fornecendo ao leitor elementos e informações suficientes para julgar se o estudo é válido, reprodutível e aplicável em outros estudos.
-Geralmente ela contém uma revisão da literatura, mostrando os resultados de colegas da área em estudos anteriores.
-Neste tipo de artigo a revisão da literatura foi substituída pela subseção anterior (Fundamentação Teórica), mais indicada para artigos durante o curso de graduação.
+% Figura solo ---------------------------------------------
 
-A seção deverá apresentar o tipo de pesquisa realizada, os dados a serem obtidos, a forma de obtenção dos dados, o tratamento e análise dos dados (processamento de sinais), as aplicações e as limitações da pesquisa (pontos fortes e pontos fracos).
-Também deverão ser descritas a metodologia utilizada nas simulações que serão apresentadas no artigo, além dos softwares e dos scripts utilizados para tais fins.
-Esta subseção poderá ser subdividida caso seja necessário.
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=120pt]{images/figure.png}
+        %\includesvg[width=120pt]{images/figure.svg}
+        \caption{Legenda.}
+        \label{fig:e4}
+    \end{figure}
 
-\section{Resultados Obtidos}
+    As images também podem ser utilizadas lado a lado, como é o caso das figuras \ref{fig:e5} e \ref{fig:e6}.
+    Observe também que as figuras estão em formatos diferentes: a figura \ref{fig:e5} está em PNG, enquanto a figura \ref{fig:e6} está em PDF.
+    Isso está assim para mostrar a perda de qualidade nos formatos não vetoriais.
 
-Nesta seção deverão ser apresentados os principais resultados obtidos na análise realizada.
-Pela característica dos temas apresentados esta seção pode ser quase sempre dividida em duas subseções, como as descritas a seguir.
+% Figuras lado a lado -------------------------------------
 
-\subsection{Resultados relacionados ao processamento de sinais}
+    \begin{figure}[htb]
+        \centering
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.png}
+            \caption{Legenda figura PNG.}
+            \label{fig:e5}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura PDF.}
+            \label{fig:e6}
+        \end{minipage}
+    \end{figure}
 
-Esta subseção descreve os principais resultados obtidos relacionados à área de processamento de sinais.
-O título deverá refletir o conteúdo apresentado. Se for necessário esta subseção poderá ser subdividida.
+    Caso esteja usando este template no Overleaf, também é fácil utilizar imagens em SVG com o comando \lstinline[language=TeX, style=Code]|\includesvg|.
+    Porém, fora do Overleaf é um tanto trabalhoso e compensa converter o SVG em PDF.
 
-\subsection{Resultados relacionados à simulação de sistemas}
+    \begin{figure}[htb]
+        \centering
+        \begin{minipage}{7.5cm}
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura ao lado do texto.}
+            \label{fig:texto_do_lado}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{7.5cm}
+            \linespread{1.5}\selectfont
+            
+            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{7.5cm}|.
+            Nesse modo também é possível inverter onde vai o texto ou a figura, de acordo com qual aparece antes no código fonte.
 
-Esta subseção descreve os principais resultados obtidos relacionados à área de simulação de sistemas.
-O título deverá refletir o conteúdo apresentado.
-Se for necessário esta subseção poderá ser subdividida.
+        \end{minipage}
+    \end{figure}
 
-\section{Conclusões e Futuros Trabalhos}
+% Tabelas =================================================
 
-Esta seção deverá descrever de forma resumida as principais conclusões e observações feitas no artigo.
-Ela deve conter ainda as simplificações e limitações dos modelos, simulações e processamento de sinais, além de possíveis melhorias que poderão ser introduzidas em trabalhos futuros.
+\section{Tabelas}
+\label{sec:tabelas}
+
+    A inserção de tabelas é feita pelo ambiente \lstinline[language=TeX, style=Code]|tabular|, no entanto para obter resultados melhores ele é inserido dentro de outro ambiente, o \lstinline[language=TeX, style=Code]|table|.
+    A tabela \ref{tab:e7} é um exemplo.
+
+% Tabela --------------------------------------------------
+
+    \begin{table}[htb]
+        \centering
+        \caption{Exemplo de tabela}
+        \label{tab:e7}
+        \begin{tabular}{l|ccc}
+            \hline
+            \multirow{2}{*}{\textbf{Gêneros}} & \multicolumn{3}{c}{\textbf{Esportes}} \\ \cline{2-4} 
+                                              & Futebol    & Handebol    & Natação    \\ \hline
+            Masculino                         & 20         & 7           & 4          \\
+            Feminino                          & 4          & 10          & 8          \\ \hline
+            Maioria                           & 83,33\%    & 58,82\%     & 66,67\%    \\ \hline
+            \end{tabular}
+    \end{table}
+
+    Geralmente, trabalhar com tabelas diretamente no \LaTeX pode ser complicado e confuso.
+    Para facilitar isso pode-se utilizar o site \href{https://www.tablesgenerator.com}{Tables Generator}, onde é possível criar tabelas de forma mais intuitiva, ou copiar tabelas com \textit{Ctrl C - Ctrl V} de softwares como Excel.
+
+% Códigos =================================================
+
+\section{Código Fonte}
+\label{sec:codigo}
+
+    É possível incluir código fonte tanto no próprio texto com o comando \lstinline[language=TeX,style=Code]|\lstinline[]|, ou como bloco para trechos extensos com o ambiente \lstinline[language=TeX,style=Code]|lstlisting|.
+
+% Bloco de código -----------------------------------------
+
+\begin{lstlisting}[language=Python, style=Code]
+import numpy as np
+
+A = np.array([[10, 2, 1], [1, 5, 1], [2, 3, 10]], dtype=float)
+B = np.array([7, -8, 6], dtype=A.dtype)
+guess = np.array([0.7, -1.6, 0.6], dtype=A.dtype)
+
+def jacobi(A,b,N=25,x=None):
+    # Create an initial guess if needed                                                                                                                                                            
+    if x is None:
+        x = np.zeros(len(A[0]))
+
+    # Create a vector of the diagonal elements of A                                                                                                                                                
+    # and subtract them from A                                                                                                                                                                     
+    D = np.diag(A)
+    R = A - np.diagflat(D)
+
+    # Iterate for N times                                                                                                                                                                          
+    for i in range(N):
+        x = (b - np.dot(R,x)) / D
+    return x
+\end{lstlisting}
+
+    No geral o que esses comando e ambiente fazem é simplesmente não compilar o que é inserido neles.
+    As opções de linguagem e estilo são opcionais, no entanto facilitam a legibilidade.
+
+% Formatação de texto =====================================
+
+\section{Formatação de Texto}
+\label{sec:formatacao}
+
+    \begin{itemize}
+        \item \textbf{Negrito} -- \lstinline[language=TeX,style=code]|\textbf{}|
+        \item \textit{Itálico} -- \lstinline[language=TeX,style=code]|\textit{}|
+        \item \underline{Sublinhado} -- \lstinline[language=TeX,style=code]|\underline{}|
+    \end{itemize}
+
+% Listas ==================================================
+
+\section{Listas}
+\label{sec:listas}
+
+    Listas no \LaTeX\ podem ser enumeradas, ou itemizadas:
+
+% Lista enumerada -----------------------------------------
+
+    \begin{enumerate}
+        \item Primeiro item
+        \item Segundo item
+    \end{enumerate}
+
+% Lista itemizada -----------------------------------------
+
+    \begin{itemize}
+        \item Primeiro item
+        \item Segundo item
+    \end{itemize}
+
+% Citações ================================================
+
+\section{Citações}
+
+    As referências bibbliográficas devem ser inclusas no arquivo \textit{bibliography.bib}.
+    as citações, a partir das referencias inclusas, podem ser feitas de diversas formas.
+
+% Tipos de citação ----------------------------------------
+
+    \begin{itemize}
+        \item Com Autores e ano em parêntesis -- \cite{wortmann2015internet}
+        \item Com autores fora e ano dentro dos parêntesis -- \textcite{weber2010internet}
+        \item Com título fora e ano dentro dos parêntesis -- \citetitle{wortmann2015internet}
+        \item Apenas autores entre parêntesis -- \citeauthor{ashton2009internet}
+        \item Apenas o ano entre parêntesis -- \citeyear{yoo2010research}
+        \item Ou \textit{apud}, onde o primeiro autor cita o segundo -- \apud{wortmann2015internet}{yoo2010research}
+    \end{itemize}
+
+    Apenas os dois primeiros funcionam no formator de citações numéricas.
+
+    Caso a citação seja direta e ocupe mais que três linhas ela deve estar em um bloco com formatação diferente.
+    Para gerar esse bloco, neste template, utilize o comando \lstinline[language=TeX,style=code]|\directcite{}|, como mostrado a seguir.
+
+% Citação direta ------------------------------------------
+
+    \directcite{Extending the initial application scope, the IoT might also serve as backbone for
+    ubiquitous computing, enabling smart environments to recognize and identify
+     objects, and retrieve information from the Internet to facilitate their adaptive
+    functionality \cite{weber2010internet}.}
+
+% Multicolunas ============================================
+
+\section{Multicolunas}
+\label{sec:multicolunas}
+
+% Multicolunas para texto ---------------------------------
+
+    \begin{multicols}{2}
+        O ambiente \lstinline[language=TeX,style=code]|{multicols}{2}| gera multiplas colunas no documento.
+        O segundo parâmetro é o número de colunas geradas.
+
+        O texto é justificado automaticamente.
+        No entanto, elementos flutuantes como figuras e tabelas não podem ser inclusos no ambiente normalmente.
+
+        Para incluir figuras deve ser utilizado o ambiente \lstinline[language=TeX,style=code]|{figure*}{tb}| no lugar do tradicional \lstinline[language=TeX,style=code]|{figure}{htb}|.
+        No entando, as figuras não são posicionados no meio do texto, mas sim no topo ou base da página, ignorando a divisão das colunas.
+
+        É comum que, nesse caso, a figura apareça somente na página seguinte.
+        Por isso, recomendo que, se possível, evite usar figuras nesse ambiente.
+
+% Figura (que ignora as colunas) --------------------------
+
+        \begin{figure*}[bt]
+            \centering
+            \includegraphics[width=120pt]{images/figure.pdf}
+            \caption{Legenda figura PNG.}
+            \label{fig:coluna_dupla}
+        \end{figure*}
+        
+        \lipsum[1][1-10]
+    \end{multicols}
+
+% Expressões Matemáticas ==================================
+
+\section{Expressões Matemáticas}
+\label{sec:exmatematicas}
+
+    Expressões matemáticas podem ser inclusas de três formas:
+    no texto; em destaque sem índice; ou em destaque com índice.
+
+% Expressões no texto -------------------------------------
+
+    Para incluir as expressões no texto basta delimitá-las com sifrão (\$).
+    \lstinline[language=TeX,style=code]|$x = 2$| produz $x = 2$.
+    Em alguns casos porém, quando a expressão é naturalmente alta ela será comprimida, como frações por exemplo $\frac{3}{7}$.
+
+% Destaque - sem índice -----------------------------------
+
+    Para gerar expressões destacadas, porém sem índice, elas devem ser delimitadas por sifrões duplos (\$\$).
+    Nesse caso, \lstinline[language=teX,style=code]|$$\frac{1}{2} = 0,5$$| produz:
+    $$\frac{1}{2} = 0,5$$
+
+% Destaque - com índice -----------------------------------
+
+    Expressões matemáticas com índice utilizam o ambiente \lstinline[language=TeX,style=code]|equation|.
+    E permite que as expressões sejam referenciadas no texto, como é o caso da equação \ref{eq:baskara}.
+
+    \begin{equation}
+        x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \label{eq:baskara}
+    \end{equation}
+
+

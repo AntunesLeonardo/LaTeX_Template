@@ -205,8 +205,8 @@
 % References ----------------------------------------------
 
 \newcommand{\biblio}{
-    \newpage
+    % bibintoc
     \begin{center}
-        \printbibliography[heading=bibintoc, title={Referências}]
+        \printbibliography[heading={bibintoc}, title={Referências}]
     \end{center}
 }
