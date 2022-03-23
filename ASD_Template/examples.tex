@@ -46,8 +46,8 @@
 
     \begin{figure}[htb]
         \centering
-        \includegraphics[width=120pt]{images/figure.png}
-        %\includesvg[width=120pt]{images/figure.svg}
+        \includegraphics[width=0.4\textwidth]{images/figure.png}
+        %\includesvg[width=0.5\textwidth]{images/figure.svg}
         \caption{Legenda.}
         \label{fig:e4}
     \end{figure}
@@ -60,16 +60,16 @@
 
     \begin{figure}[htb]
         \centering
-        \begin{minipage}{7.5cm}
+        \begin{minipage}{0.49\textwidth}
             \centering
-            \includegraphics[width=120pt]{images/figure.png}
+            \includegraphics[width=0.5\textwidth]{images/figure.png}
             \caption{Legenda figura PNG.}
             \label{fig:e5}
         \end{minipage}
         \hfill
-        \begin{minipage}{7.5cm}
+        \begin{minipage}{0.49\textwidth}
             \centering
-            \includegraphics[width=120pt]{images/figure.pdf}
+            \includegraphics[width=0.5\textwidth]{images/figure.pdf}
             \caption{Legenda figura PDF.}
             \label{fig:e6}
         \end{minipage}
@@ -80,17 +80,17 @@
 
     \begin{figure}[htb]
         \centering
-        \begin{minipage}{7.5cm}
+        \begin{minipage}{0.49\textwidth}
             \centering
-            \includegraphics[width=120pt]{images/figure.pdf}
+            \includegraphics[width=0.5\textwidth]{images/figure.pdf}
             \caption{Legenda figura ao lado do texto.}
             \label{fig:texto_do_lado}
         \end{minipage}
         \hfill
-        \begin{minipage}{7.5cm}
-            \linespread{1.5}\selectfont
+        \begin{minipage}{0.49\textwidth}
+            \linespread{1.0}\selectfont
             
-            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{7.5cm}|.
+            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{0.49\textwidth}|.
             Nesse modo também é possível inverter onde vai o texto ou a figura, de acordo com qual aparece antes no código fonte.
 
         \end{minipage}
@@ -132,27 +132,40 @@
 
 % Bloco de código -----------------------------------------
 
-\begin{lstlisting}[language=Python, style=Code]
-import numpy as np
+\begin{lstlisting}[language=Matlab, style=Code]
+clear							        % Cleaning memory
 
-A = np.array([[10, 2, 1], [1, 5, 1], [2, 3, 10]], dtype=float)
-B = np.array([7, -8, 6], dtype=A.dtype)
-guess = np.array([0.7, -1.6, 0.6], dtype=A.dtype)
+fo=10;							      % Fundamental frequency [Hz]
+wo=2*pi*fo;                       % Fundamental angular frequency [rad/s]
+X1=10;        X2=15;         % Amplitudes [EU]
+X3=10;        X4=15;           
+w1=1*wo;   w2=4*wo;      % Frequencies [rad/s]
+w3=8*wo;   w4=12*wo;           
 
-def jacobi(A,b,N=25,x=None):
-    # Create an initial guess if needed                                                                                                                                                            
-    if x is None:
-        x = np.zeros(len(A[0]))
+Ta=1/fo;						    % Analysis time [s]
+fs=1E5;                             % Sampling frequency [Hz]
+dt=1/fs;						      % Time increment [s]
+N=round(Ta/dt);                % Number of terms
+t=0:dt:3*(N-1)*dt;		  	    % Time (vector) [s]
+xt= X1*cos(w1*t)+X2*cos(w2*t)+X3*cos(w3*t)+X4*cos(w4*t);
 
-    # Create a vector of the diagonal elements of A                                                                                                                                                
-    # and subtract them from A                                                                                                                                                                     
-    D = np.diag(A)
-    R = A - np.diagflat(D)
+%----------------------------------------------------------------------------------------------------------
+% Determining Fourier Nc coefficients Dn
+%
+j=sqrt(-1);
+Nc=80;
 
-    # Iterate for N times                                                                                                                                                                          
-    for i in range(N):
-        x = (b - np.dot(R,x)) / D
-    return x
+for n=1:Nc,
+		D(n)=0;
+        
+    for k=1:N,
+        D(n)=D(n)+1/N*xt(1,k)*exp(-j*2*pi*k*(n-1)/N);
+    end
+    
+end
+
+w=0:wo:(Nc-1)*wo;   	    % Frequencies [rad/s]
+ModD=2*abs(D);              % Negative frequencies compensation  [EU]
 \end{lstlisting}
 
     No geral o que esses comando e ambiente fazem é simplesmente não compilar o que é inserido neles.
@@ -205,10 +218,10 @@ def jacobi(A,b,N=25,x=None):
         \item Com título fora e ano dentro dos parêntesis -- \citetitle{wortmann2015internet}
         \item Apenas autores entre parêntesis -- \citeauthor{ashton2009internet}
         \item Apenas o ano entre parêntesis -- \citeyear{yoo2010research}
-        \item Ou \textit{apud}, onde o primeiro autor cita o segundo -- \apud{wortmann2015internet}{yoo2010research}
+        \item Ou \textit{apud}, onde o primeiro autor é citado pelo segundo -- \apud{yoo2010research}{wortmann2015internet}
     \end{itemize}
 
-    Apenas os dois primeiros funcionam no formator de citações numéricas.
+    Apenas os dois primeiros funcionam no formato de citações numéricas.
 
     Caso a citação seja direta e ocupe mais que três linhas ela deve estar em um bloco com formatação diferente.
     Para gerar esse bloco, neste template, utilize o comando \lstinline[language=TeX,style=code]|\directcite{}|, como mostrado a seguir.
@@ -271,6 +284,12 @@ def jacobi(A,b,N=25,x=None):
     Para gerar expressões destacadas, porém sem índice, elas devem ser delimitadas por sifrões duplos (\$\$).
     Nesse caso, \lstinline[language=teX,style=code]|$$\frac{1}{2} = 0,5$$| produz:
     $$\frac{1}{2} = 0,5$$
+    
+    Ou ainda, utilizando o ambiente \lstinline[language=TeX,style=code]|equation*| com asteriscos:
+    
+    \begin{equation*}
+        A^{2} + B^{2} = C^{2}
+    \end{equation*}
 
 % Destaque - com índice -----------------------------------
 
@@ -282,4 +301,8 @@ def jacobi(A,b,N=25,x=None):
         \label{eq:baskara}
     \end{equation}
 
+    Em caso de dificuldade pra lembar algum símbolo ou comando, uma opção de ajuda é o site \href{https://www.codecogs.com/latex/eqneditor.php}{CodeCogs}.
 
+% Incluir bibliografia -----------------------------------
+
+\biblio
