@@ -6,7 +6,7 @@
 
 % Package input -------------------------------------------
 
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage[top=30mm, bottom=20mm, left=30mm, right=20mm]{geometry}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[style=abnt, sorting=nty, % <-- Autor-data
@@ -36,15 +36,15 @@
 
 % Formating -----------------------------------------------
 
-\renewcommand{\baselinestretch}{1.5}
-\setlength{\parindent}{4em}
+\renewcommand{\baselinestretch}{1.0}
+\setlength{\parindent}{2em}
 \setlength{\parskip}{1em}
 \setlength{\columnsep}{1cm}
-\titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalsize\bfseries\MakeUppercase}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
-\titleformat{name=\section,numberless}{\centering\normalsize\bfseries\MakeUppercase}{}{0em}{}
-\captionsetup{font={footnotesize,stretch=1.0}}
+\titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{name=\section,numberless}{\flushleft\large\bfseries}{}{0em}{}
+\captionsetup{font={footnotesize,bf,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
 
@@ -55,9 +55,10 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\footnotesize{\thepage}}
+\fancyfoot[R]{\footnotesize{\thepage}}
 \renewcommand{\headrulewidth}{0pt}
 \setlength\headheight{14pt}
+
 
 % Listing colors ==========================================
 
@@ -67,6 +68,8 @@
 \definecolor{codeblue}{rgb}{0,0,0.6}
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\definecolor{greencover}{RGB}{0,176,78}
 
 % Code ----------------------------------------------------
 
@@ -92,15 +95,6 @@
 
 % Addicional commands =====================================
 
-% Storing values ------------------------------------------
-
-\newcommand{\subtitle}{\newcommand{\@subtitle}}
-\newcommand{\institution}{\newcommand{\@institution}}
-\newcommand{\graduation}{\newcommand{\@graduation}}
-\newcommand{\city}{\newcommand{\@city}}
-\newcommand{\note}{\newcommand{\@note}}
-\newcommand{\professor}{\newcommand{\@professor}}
-
 % Quick spacing commands ----------------------------------
 
 \newcommand{\simplespacing}{
@@ -121,6 +115,10 @@
         \footnotesize{#1}
     \end{minipage}
     \vspace{1.5cm}
+}
+
+\newcommand{\quo}[1]{
+    ``#1''
 }
 
 % Mathematical commands -----------------------------------
@@ -149,76 +147,12 @@
 
 % Pretextual elements =====================================
 
-% Cover ---------------------------------------------------
-
-\newcommand{\cover}{
-    \thispagestyle{empty}
+\newcommand{\head}{
+    % bibintoc
+    \begin{flushright}
+        \@author
+    \end{flushright}
     \begin{center}
-        \MakeUppercase{\@institution}\\
-        \MakeUppercase{\@graduation}\\
-        \vspace{36pt}
-        \MakeUppercase{\@author}\\
-        \vspace{144pt}
-        \MakeUppercase{\textbf{\@title}}\\
-        {\@subtitle}\\
-        \vfill
-        \MakeUppercase{\@city}\\
-        \MakeUppercase{\@date}
-    \end{center}
-    \newpage
-    \setcounter{page}{1}
-}
-
-% Title page ----------------------------------------------
-
-\newcommand{\titlePage}{
-    \thispagestyle{empty}
-    \begin{center}
-        \MakeUppercase{\@author}\\
-        \vspace{144pt}
-        \MakeUppercase{\textbf{\@title}}\\
-        {\@subtitle}\\
-        \vspace{72pt}
-        \hspace{9.9cm}
-        \begin{minipage}{6cm}
-            {\@note}\break
-            \\ \hfill
-            {\@professor}
-        \end{minipage}\\ \hfil
-        \vfill
-        \MakeUppercase{\@city}\\
-        \MakeUppercase{\@date}
-    \end{center}
-    \newpage
-}
-
-% Table of contents ---------------------------------------
-
-\addto\captionsbrazil{\renewcommand{\contentsname}{\normalsize{SUMÁRIO}}}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand\cftsecfont{\mdseries}
-\renewcommand\cftsecpagefont{\mdseries}
-\tocloftpagestyle{fancy}
-\setlength{\cftsecindent}{0pt}
-\setlength{\cftsubsecindent}{0pt}
-\setlength{\cftsubsubsecindent}{0pt}
-\setlength{\cftbeforesecskip}{6pt}
-\setlength{\cftbeforesubsecskip}{6pt}
-\setlength{\cftbeforesubsubsecskip}{6pt}
-
-\newcommand{\contents}{
-    \begin{center}
-        \tableofcontents
-        \thispagestyle{empty}
-    \end{center}
-    \newpage
-}
-
-% References ----------------------------------------------
-
-\newcommand{\biblio}{
-    \newpage
-    \begin{center}
-        \printbibliography[heading=bibintoc, title={Referências}]
+        \printbibliography[heading={none}, title={Referências}]
     \end{center}
 }

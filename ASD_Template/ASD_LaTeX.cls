@@ -43,7 +43,7 @@
 \titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{1em}{}
+\titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{0em}{}
 \captionsetup{font={footnotesize,bf,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
