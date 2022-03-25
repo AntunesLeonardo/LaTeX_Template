@@ -40,10 +40,10 @@
 \setlength{\parindent}{2em}
 \setlength{\parskip}{1em}
 \setlength{\columnsep}{1cm}
-\titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection}{1em}{}
-\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{name=\section,numberless}{\flushleft\large\bfseries}{}{0em}{}
+\titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{name=\section,numberless}{\flushleft\normalsize\bfseries}{}{0em}{}
 \captionsetup{font={footnotesize,bf,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
