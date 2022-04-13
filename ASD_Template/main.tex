@@ -21,7 +21,7 @@
 \authoremail{fulano@somewhere.com}
 
 \title{Título}
-\edition{2\textsuperscript{nd} Sysdin}
+\edition{2\textsuperscript{ND} Sysdin}
 \location{Iguassu Falls, Paraná - Brazil}
 \city{Foz do Iguaçu, PR, Brazil}
 \address{Av. Tancredo Neves, 6731 - Jardim Itaipu, 85.867-900, Paraná, PR, Brasil}
@@ -35,8 +35,9 @@
 % Comente os elementos não desejados no seu projeto:
 
 \begin{document}
-    %\include{contents.tex}
-    \include{template.tex}
-    %\include{examples}
-    %\include{appendices.tex}
+    %\input{contents.tex}% <- Arquivo para o conteúdo
+    \input{template.tex}% <- Template do professor
+    %\input{examples}% <- Arquivo de exemplos
+
+    \biblio
 \end{document}

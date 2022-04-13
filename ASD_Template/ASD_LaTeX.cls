@@ -43,7 +43,7 @@
 \titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{0em}{}
+\titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{1em}{}
 \captionsetup{font={footnotesize,bf,stretch=1.0}}
 
 % Appendix naming -----------------------------------------
@@ -56,7 +56,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[LE]{\footnotesize{\MakeUppercase{\@edition\ \@theyear\ \@title}}}
-\fancyhead[RO]{\footnotesize{\MakeUppercase{\@authorabbreviate}}}
+\fancyhead[RO]{\footnotesize{{\@authorabbreviate}}}
 \fancyfoot[L]{\footnotesize{{\flushright{\MakeUppercase{Sysdin \@theyear}}}\\Proceedings of the\ \@edition\ \@theyear\ World Congress on System Dynamics, \@professor\ (Editor), \MakeUppercase{\@institution}, \@city, \@date, \@theyear}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -79,7 +79,7 @@
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\definecolor{greencover}{RGB}{0,176,78}
+\definecolor{covercolor}{RGB}{192,0,0}
 
 % Code ----------------------------------------------------
 
@@ -184,7 +184,7 @@
         \begin{minipage}{7.5cm}
             \linespread{1.5}\selectfont
             
-            \textcolor{greencover}{\MakeUppercase{\Huge{\@edition\ \@theyear}\\ \normalsize{\@location}}}
+            \textcolor{covercolor}{\MakeUppercase{\Huge{\@edition\ \@theyear}\\ \normalsize{\@location}}}
 
         \end{minipage}
     \end{figure}

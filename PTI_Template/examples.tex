@@ -45,9 +45,9 @@
 % Figura solo ---------------------------------------------
 
     \begin{figure}[htb]
-        \centering
-        \includegraphics[width=120pt]{images/figure.png}
-        %\includesvg[width=120pt]{images/figure.svg}
+    \centering
+        \includegraphics[width=0.4\textwidth]{images/figure.png}
+        %\includesvg[width=0.5\textwidth]{images/figure.svg}
         \caption{Legenda.}
         \label{fig:e4}
     \end{figure}
@@ -60,16 +60,16 @@
 
     \begin{figure}[htb]
         \centering
-        \begin{minipage}{7.5cm}
+        \begin{minipage}{0.49\textwidth}
             \centering
-            \includegraphics[width=120pt]{images/figure.png}
+            \includegraphics[width=0.5\textwidth]{images/figure.png}
             \caption{Legenda figura PNG.}
             \label{fig:e5}
         \end{minipage}
         \hfill
-        \begin{minipage}{7.5cm}
+        \begin{minipage}{0.49\textwidth}
             \centering
-            \includegraphics[width=120pt]{images/figure.pdf}
+            \includegraphics[width=0.5\textwidth]{images/figure.pdf}
             \caption{Legenda figura PDF.}
             \label{fig:e6}
         \end{minipage}
@@ -80,17 +80,17 @@
 
     \begin{figure}[htb]
         \centering
-        \begin{minipage}{7.5cm}
+        \begin{minipage}{0.49\textwidth}
             \centering
-            \includegraphics[width=120pt]{images/figure.pdf}
+            \includegraphics[width=0.5\textwidth]{images/figure.pdf}
             \caption{Legenda figura ao lado do texto.}
             \label{fig:texto_do_lado}
         \end{minipage}
         \hfill
-        \begin{minipage}{7.5cm}
-            \linespread{1.5}\selectfont
-            
-            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{7.5cm}|.
+        \begin{minipage}{0.49\textwidth}
+            \linespread{1.0}\selectfont
+
+            Caso o desejado seja apenas colocar texto lado a lado com figuras, uma solução possível é usar o ambiente \lstinline[language=TeX,style=code]|{minipage}{0.49\textwidth}|.
             Nesse modo também é possível inverter onde vai o texto ou a figura, de acordo com qual aparece antes no código fonte.
 
         \end{minipage}
