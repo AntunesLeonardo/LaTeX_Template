@@ -18,7 +18,8 @@
             uniquename=init]{biblatex}
 \usepackage[titletoc,toc,page]{appendix}
 \usepackage[table,xcdraw]{xcolor}
-\usepackage{fancyhdr, graphicx, svg, float, caption}
+\usepackage[siunitx]{circuitikz}
+\usepackage{fancyhdr, graphicx, svg, tikz, float, caption}
 \usepackage{tocloft, titlesec, hyperref}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{lipsum, booktabs, multirow}

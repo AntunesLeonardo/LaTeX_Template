@@ -286,3 +286,29 @@ ModD=2*abs(D);              % Negative frequencies compensation  [EU]
     \end{equation}
 
     Em caso de dificuldade pra lembar algum símbolo ou comando, uma opção de ajuda é o site \href{https://www.codecogs.com/latex/eqneditor.php}{CodeCogs}.
+
+
+% Circuitos Elétricos =====================================
+
+\section{Circuitos Elétricos}
+\label{sec:circuitos}
+
+    É possível adicionar circuitos elétricos a partir de comandos no próprio \LaTeX, com o pacote \texttt{circuitikz}, como mostrado na figura \ref{fig:circuito}.
+
+    \begin{figure}[htb]
+        \centering
+        \begin{circuitikz} \draw
+            (0,3) to[short, o-] (1,3)
+            (1,3) to[american inductor, l=$L$] (3,3)
+            (3,3) to[R, l=$R_2$] (5,3)
+            (5,3) to[short, -o] (8,3)
+            (5,3) to[R, l=$R_1$] (5,0)
+            (7,3) to[C, l=$C$] (7,0)
+            (8,0) to[short, o-o] (0,0)
+            (0,0) to [open, v^=$u(t)$] (0,3)
+            (8,0) to [open, v=$y(t)$] (8,3)
+            ;
+        \end{circuitikz}
+        \caption{Circuito}
+        \label{fig:circuito}
+    \end{figure}
