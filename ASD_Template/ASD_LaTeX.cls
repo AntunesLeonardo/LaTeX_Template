@@ -26,6 +26,7 @@
 \usepackage{times, cuted, xparse}
 \usepackage{listings, csquotes}
 \usepackage{multicol, wrapfig}
+\usepackage{tabularx}
 
 %\usepackage[grid]{eso-pic}
 
@@ -41,11 +42,18 @@
 \setlength{\parindent}{2em}
 \setlength{\parskip}{1em}
 \setlength{\columnsep}{1cm}
+
 \titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{1em}{}
+\titleformat{name=\section,numberless}{\flushleft\large\bfseries\MakeUppercase}{}{0em}{}
 \captionsetup{font={footnotesize,bf,stretch=1.0}}
+
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 % Appendix naming -----------------------------------------
 

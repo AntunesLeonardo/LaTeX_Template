@@ -106,19 +106,24 @@
 
 % Tabela --------------------------------------------------
 
-    \begin{table}[htb]
-        \centering
-        \caption{Exemplo de tabela}
-        \label{tab:e7}
-        \begin{tabular}{l|ccc}
-            \hline
-            \multirow{2}{*}{\textbf{Gêneros}} & \multicolumn{3}{c}{\textbf{Esportes}} \\ \cline{2-4} 
-                                              & Futebol    & Handebol    & Natação    \\ \hline
-            Masculino                         & 20         & 7           & 4          \\
-            Feminino                          & 4          & 10          & 8          \\ \hline
-            Maioria                           & 83,33\%    & 58,82\%     & 66,67\%    \\ \hline
-            \end{tabular}
-    \end{table}
+\begin{table}[htb]
+    \centering
+    \caption{Exemplo de tabela}
+    \label{tab:e7}
+    \begin{tabularx}{0.8\textwidth}{
+    >{\hsize=\hsize}L|
+    >{\hsize=\hsize}C
+    >{\hsize=\hsize}C
+    >{\hsize=\hsize}C
+    }
+        \hline
+        \multirow{2}{*}{\textbf{Gêneros}} & \multicolumn{3}{c}{\textbf{Esportes}} \\ \cline{2-4} 
+                                          & Futebol    & Handebol    & Natação    \\ \hline
+        Masculino                         & 20         & 7           & 4          \\
+        Feminino                          & 4          & 10          & 8          \\ \hline
+        Maioria                           & 83,33\%    & 58,82\%     & 66,67\%    \\ \hline
+    \end{tabularx}
+\end{table}
 
     Geralmente, trabalhar com tabelas diretamente no \LaTeX pode ser complicado e confuso.
     Para facilitar isso pode-se utilizar o site \href{https://www.tablesgenerator.com}{Tables Generator}, onde é possível criar tabelas de forma mais intuitiva, ou copiar tabelas com \textit{Ctrl C - Ctrl V} de softwares como Excel.
