@@ -55,6 +55,8 @@
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
+\hypersetup{hidelinks}
+
 % Appendix naming -----------------------------------------
 
 \renewcommand{\appendixtocname}{Apêndices}
