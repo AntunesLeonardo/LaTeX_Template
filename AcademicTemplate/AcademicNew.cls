@@ -7,7 +7,7 @@
 % Package input -------------------------------------------
 
 \usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
-\usepackage[brazil]{babel}
+\usepackage{polyglossia}
 \usepackage{luainputenc}
 \usepackage[style=abnt, sorting=nty, % <-- Autor-data
             %style=abnt-numeric, sorting=none, % <-- Numérico
@@ -41,6 +41,11 @@
 
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
+
+% Languages -----------------------------------------------
+
+\setmainlanguage[variant=brazilian]{portuguese}
+\setotherlanguage[variant=american]{english}
 
 % Formating -----------------------------------------------
 
@@ -211,7 +216,7 @@
 
 % Table of contents ---------------------------------------
 
-\addto\captionsbrazil{\renewcommand{\contentsname}{\normalsize{SUMÁRIO}}}
+\renewcommand{\cfttoctitlefont}{\normalfont\normalsize\bfseries\MakeUppercase}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand\cftsecfont{\mdseries}
 \renewcommand\cftsecpagefont{\mdseries}
