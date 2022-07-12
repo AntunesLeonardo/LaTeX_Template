@@ -8,7 +8,7 @@
 
 \usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
 \usepackage[brazil]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage{luainputenc}
 \usepackage[style=abnt, sorting=nty, % <-- Autor-data
             %style=abnt-numeric, sorting=none, % <-- Numérico
             giveninits,
@@ -27,6 +27,7 @@
 \usepackage{listings, csquotes}
 \usepackage{multicol, wrapfig}
 \usepackage{tabularx}
+\usepackage{fontspec}
 
 %\usepackage[grid]{eso-pic}
 
@@ -35,6 +36,11 @@
 % Bibliography file input ---------------------------------
 
 \addbibresource{bibliography.bib}
+
+% Fonts ---------------------------------------------------
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Times New Roman}
 
 % Formating -----------------------------------------------
 
