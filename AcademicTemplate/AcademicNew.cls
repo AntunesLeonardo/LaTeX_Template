@@ -2,11 +2,11 @@
 % Class File
 % =========================================================
 
-\LoadClass[a4paper,12pt,oneside,onecolumn,final]{article}
+\LoadClass[12pt]{article}
 
 % Package input -------------------------------------------
 
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage{geometry}
 \usepackage{polyglossia}
 \usepackage{luainputenc}
 \usepackage[style=abnt, sorting=nty, % <-- Autor-data
@@ -41,11 +41,26 @@
 
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
+\setmonofont{Courier New}
 
 % Languages -----------------------------------------------
 
 \setmainlanguage[variant=brazilian]{portuguese}
-\setotherlanguage[variant=american]{english}
+%\setotherlanguage[variant=american]{english}
+
+% Geometry ------------------------------------------------
+
+\geometry{
+    a4paper,
+    portrait,
+    onecolumn,
+    includeheadfoot,
+    twoside=false,
+    top=30mm,
+    bottom=20mm,
+    left=30mm,
+    right=20mm
+}
 
 % Formating -----------------------------------------------
 
