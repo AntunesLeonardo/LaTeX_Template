@@ -6,20 +6,46 @@
 
 % Package input -------------------------------------------
 
-\usepackage{geometry}
 \usepackage{polyglossia}
 \usepackage{luainputenc}
+\usepackage{fontspec}
+\usepackage[a4paper,
+            portrait,
+            onecolumn,
+            includeheadfoot,
+            twoside=false,
+            top=30mm,
+            bottom=20mm,
+            left=30mm,
+            right=20mm
+            ]{geometry}
 \usepackage[style=abnt, sorting=nty, % <-- Autor-data
             %style=abnt-numeric, sorting=none, % <-- Numérico
             giveninits,
             extrayear,
             repeatfields,
             backend=biber,
-            uniquename=init]{biblatex}
-\usepackage[titletoc,toc,page]{appendix}
-\usepackage[table,xcdraw]{xcolor}
-\usepackage[siunitx]{circuitikz}
-\usepackage{fancyhdr, graphicx, svg, tikz, float, caption}
+            uniquename=init
+            ]{biblatex}
+\usepackage[%rgb, % <-- Digital (RGB)
+            cmyk, % <-- Printing (CMYK)
+            %gray, % <-- Gray scale
+            table,
+            xcdraw
+            ]{xcolor}
+\usepackage[siunitx,
+            %americanvoltages, % <-- +- voltage
+            europeanvoltages, % <-- Arrow voltage
+            americancurrents,
+            americanresistors, % <-- Zig-zag resistors
+            %europeanresistors, % <-- Rectangular resistors
+            americaninductors
+            ]{circuitikz}
+\usepackage{float}
+\usepackage{graphicx, svg}
+\usepackage{appendix}
+
+\usepackage{fancyhdr, tikz, caption}
 \usepackage{tocloft, titlesec, hyperref}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{lipsum, booktabs, multirow}
@@ -27,7 +53,6 @@
 \usepackage{listings, csquotes}
 \usepackage{multicol, wrapfig}
 \usepackage{tabularx}
-\usepackage{fontspec}
 
 %\usepackage[grid]{eso-pic}
 
@@ -48,32 +73,25 @@
 \setmainlanguage[variant=brazilian]{portuguese}
 %\setotherlanguage[variant=american]{english}
 
-% Geometry ------------------------------------------------
-
-\geometry{
-    a4paper,
-    portrait,
-    onecolumn,
-    includeheadfoot,
-    twoside=false,
-    top=30mm,
-    bottom=20mm,
-    left=30mm,
-    right=20mm
-}
-
-% Formating -----------------------------------------------
+% Spacing -------------------------------------------------
 
 \renewcommand{\baselinestretch}{1.5}
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
 \setlength{\columnsep}{1cm}
 
+% Section style -------------------------------------------
+
 \titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries\MakeUppercase}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
 \titleformat{name=\section,numberless}{\centering\normalsize\bfseries\MakeUppercase}{}{0em}{}
+
+% Caption style -------------------------------------------
+
 \captionsetup{font={footnotesize,stretch=1.0}}
+
+% Tabularx ------------------------------------------------
 
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
@@ -81,22 +99,32 @@
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
+% Hyperlinks ----------------------------------------------
+
 \hypersetup{hidelinks}
-
-% Appendix naming -----------------------------------------
-
-\renewcommand{\appendixtocname}{Apêndices}
-\renewcommand{\appendixpagename}{\centering\normalsize{\MakeUppercase{Apêndices}}}
 
 % Header/Footer -------------------------------------------
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[R]{\footnotesize{\thepage}}
-\renewcommand{\headrulewidth}{0pt}
-\setlength\headheight{14pt}
+\fancypagestyle{academic-plain}{
+    \fancyhf{}
+    \fancyhead[R]{\footnotesize{\thepage}}
+    \renewcommand{\headrulewidth}{0pt}
+    \setlength\headheight{14pt}
+}
+\pagestyle{academic-plain}
 
-% Listing colors ==========================================
+% Appendix ------------------------------------------------
+
+\providecommand{\appendixname}{Appendix}
+\renewcommand{\appendixtocname}{Apêndices}
+\renewcommand{\appendixpagename}{\centering\normalsize{\MakeUppercase{Apêndices}}}
+
+\appendixtocon
+\appendixpageon
+\appendixtitleon
+\appendixtitletocon
+
+% Define colors -------------------------------------------
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -105,7 +133,7 @@
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-% Code ----------------------------------------------------
+% Listing -------------------------------------------------
 
 \lstdefinestyle{Code}{
     backgroundcolor=\color{backcolour},   
