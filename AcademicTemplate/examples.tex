@@ -52,7 +52,7 @@
         \label{fig:e4}
     \end{figure}
 
-    As images também podem ser utilizadas lado a lado, como é o caso das figuras \ref{fig:e5} e \ref{fig:e6}.
+    As imagens também podem ser utilizadas lado a lado, como é o caso das figuras \ref{fig:e5} e \ref{fig:e6}.
     Observe também que as figuras estão em formatos diferentes: a figura \ref{fig:e5} está em PNG, enquanto a figura \ref{fig:e6} está em PDF.
     Isso está assim para mostrar a perda de qualidade nos formatos não vetoriais.
 
@@ -96,6 +96,34 @@
         \end{minipage}
     \end{figure}
 
+    As figuras também podem ser inclusas no formato de subfiguras, como na figura \ref{fig:subfiguras}.
+
+    \begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/figure.png}
+            \caption{Figura em PNG}
+            \label{subfig:png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/figure.pdf}
+            \caption{Figura em PDF}
+            \label{subfig:pdf}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.3\textwidth}
+            \centering
+            \includesvg[width=\textwidth]{images/figure.svg}
+            \caption{Figura SVG}
+            \label{subfig:svg}
+        \end{subfigure}
+           \caption{Subfiguras.}
+           \label{fig:subfiguras}
+    \end{figure}
+
 % Tabelas =================================================
 
 \section{Tabelas}
@@ -137,7 +165,8 @@
 
 % Bloco de código -----------------------------------------
 
-\begin{lstlisting}[language=Python, style=Code]
+\begin{script}
+    \begin{lstlisting}[language=Python, style=Code]
 import numpy as np
 
 A = np.array([[10, 2, 1], [1, 5, 1], [2, 3, 10]], dtype=float)
@@ -158,7 +187,10 @@ def jacobi(A,b,N=25,x=None):
     for i in range(N):
         x = (b - np.dot(R,x)) / D
     return x
-\end{lstlisting}
+    \end{lstlisting}
+    \caption{Método Jacobi em Python.}
+    \label{scr:jacobi}
+\end{script}
 
     No geral o que esses comando e ambiente fazem é simplesmente não compilar o que é inserido neles.
     As opções de linguagem e estilo são opcionais, no entanto facilitam a legibilidade.
@@ -303,7 +335,8 @@ def jacobi(A,b,N=25,x=None):
 
     \begin{figure}[htb]
         \centering
-        \begin{circuitikz} \draw
+        \resizebox{\textwidth}{!}{
+        \begin{circuitikz}[scale=1] \draw
             (0,3) to[short, o-] (1,3)
             (1,3) to[L, l=$L$] (3,3)
             (3,3) to[R, l=$R_2$] (5,3)
@@ -315,6 +348,7 @@ def jacobi(A,b,N=25,x=None):
             (8,0) to [open, v=$y(t)$] (8,3)
             ;
         \end{circuitikz}
+        }
         \caption{Circuito}
         \label{fig:circuito}
     \end{figure}

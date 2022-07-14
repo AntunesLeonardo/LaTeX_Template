@@ -27,6 +27,30 @@
             backend=biber,
             uniquename=init
             ]{biblatex}
+\usepackage[toc,
+            title,
+            titletoc,
+            page
+            ]{appendix}
+\usepackage[format=plain,
+            indention=0mm,
+            justification=centerlast,
+            labelformat=simple,
+            labelsep=colon,
+            textformat=simple,
+            font=footnotesize,
+            font+=up,
+            font+={stretch=1.0}
+            ]{caption}
+\usepackage[format=plain,
+            indention=0mm,
+            justification=centerlast,
+            labelformat=parens,
+            labelsep=space,
+            font=footnotesize,
+            font+=up,
+            font+={stretch=1.0}
+            ]{subcaption}
 \usepackage[%rgb, % <-- Digital (RGB)
             cmyk, % <-- Printing (CMYK)
             %gray, % <-- Gray scale
@@ -43,9 +67,8 @@
             ]{circuitikz}
 \usepackage{float}
 \usepackage{graphicx, svg}
-\usepackage{appendix}
+\usepackage{fancyhdr, tikz}
 
-\usepackage{fancyhdr, tikz, caption}
 \usepackage{tocloft, titlesec, hyperref}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{lipsum, booktabs, multirow}
@@ -72,6 +95,7 @@
 
 \setmainlanguage[variant=brazilian]{portuguese}
 %\setotherlanguage[variant=american]{english}
+%\setotherlanguage{latin}
 
 % Spacing -------------------------------------------------
 
@@ -87,9 +111,11 @@
 \titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
 \titleformat{name=\section,numberless}{\centering\normalsize\bfseries\MakeUppercase}{}{0em}{}
 
-% Caption style -------------------------------------------
+% Floats --------------------------------------------------
 
-\captionsetup{font={footnotesize,stretch=1.0}}
+\floatstyle{plain}
+\newfloat{script}{htbp}{lop}
+\floatname{script}{Programa} % Language sensitive
 
 % Tabularx ------------------------------------------------
 
@@ -116,13 +142,8 @@
 % Appendix ------------------------------------------------
 
 \providecommand{\appendixname}{Appendix}
-\renewcommand{\appendixtocname}{Apêndices}
-\renewcommand{\appendixpagename}{\centering\normalsize{\MakeUppercase{Apêndices}}}
-
-\appendixtocon
-\appendixpageon
-\appendixtitleon
-\appendixtitletocon
+\renewcommand{\appendixtocname}{Apêndices} % Language sensitive
+\renewcommand{\appendixpagename}{\centering\normalsize{\MakeUppercase{Apêndices}}} % Language sensitive
 
 % Define colors -------------------------------------------
 
@@ -284,6 +305,6 @@
 \newcommand{\biblio}{
     \newpage
     \begin{center}
-        \printbibliography[heading=bibintoc, title={Referências}]
+        \printbibliography[heading=bibintoc]
     \end{center}
 }
