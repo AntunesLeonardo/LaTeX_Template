@@ -272,14 +272,14 @@ def jacobi(A,b,N=25,x=None):
         No entanto, elementos flutuantes como figuras e tabelas não podem ser inclusos no ambiente normalmente.
 
         Para incluir figuras deve ser utilizado o ambiente \lstinline[language=TeX,style=code]|{figure*}{tb}| no lugar do tradicional \lstinline[language=TeX,style=code]|{figure}{htb}|.
-        No entando, as figuras não são posicionados no meio do texto, mas sim no topo ou base da página, ignorando a divisão das colunas.
+        No entando, as figuras não são posicionados no meio do texto, mas sim no topo ou base da página, ignorando a divisão das colunas, como no caso da figura \ref{fig:coluna_dupla}.
 
         É comum que, nesse caso, a figura apareça somente na página seguinte.
         Por isso, recomendo que, se possível, evite usar figuras nesse ambiente.
 
 % Figura (que ignora as colunas) --------------------------
 
-        \begin{figure*}[bt]
+        \begin{figure*}[tb]
             \centering
             \includegraphics[width=120pt]{images/figure.pdf}
             \caption{Legenda figura PNG.}
@@ -335,7 +335,7 @@ def jacobi(A,b,N=25,x=None):
 
     \begin{figure}[htb]
         \centering
-        \resizebox{\textwidth}{!}{
+        \resizebox{0.8\textwidth}{!}{
         \begin{circuitikz}[scale=1] \draw
             (0,3) to[short, o-] (1,3)
             (1,3) to[L, l=$L$] (3,3)

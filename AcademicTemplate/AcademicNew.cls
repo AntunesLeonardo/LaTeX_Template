@@ -65,13 +65,25 @@
             %europeanresistors, % <-- Rectangular resistors
             americaninductors
             ]{circuitikz}
+\usepackage[hidelinks,
+            linktoc=all,
+            breaklinks=true,
+            colorlinks=false
+            ]{hyperref}
+\usepackage[centertags,
+            sumlimits,
+            nointlimits,
+            namelimits,
+            reqno
+            ]{amsmath}
+
 \usepackage{float}
 \usepackage{graphicx, svg}
 \usepackage{fancyhdr, tikz}
-
-\usepackage{tocloft, titlesec, hyperref}
-\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{tocloft, titlesec}
+\usepackage{amsfonts, amssymb}
 \usepackage{lipsum, booktabs, multirow}
+
 \usepackage{times, cuted, xparse}
 \usepackage{listings, csquotes}
 \usepackage{multicol, wrapfig}
@@ -104,7 +116,7 @@
 \setlength{\parskip}{1em}
 \setlength{\columnsep}{1cm}
 
-% Section style -------------------------------------------
+% Section style (titlesec) --------------------------------
 
 \titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries\MakeUppercase}{\thesubsection}{1em}{}
@@ -124,10 +136,6 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
-
-% Hyperlinks ----------------------------------------------
-
-\hypersetup{hidelinks}
 
 % Header/Footer -------------------------------------------
 
