@@ -19,13 +19,14 @@
             left=30mm,
             right=20mm
             ]{geometry}
-\usepackage[style=abnt, sorting=nty, % <-- Autor-data
-            %style=abnt-numeric, sorting=none, % <-- Numérico
+\usepackage[style=abnt, sorting=nty,% <-- Autor-data
+            %style=abnt-numeric, sorting=none,% <-- Numérico
             giveninits,
             extrayear,
             repeatfields,
             backend=biber,
-            uniquename=init
+            uniquename=init,
+            bibwarn=true
             ]{biblatex}
 \usepackage[toc,
             title,
@@ -51,18 +52,18 @@
             font+=up,
             font+={stretch=1.0}
             ]{subcaption}
-\usepackage[%rgb, % <-- Digital (RGB)
-            cmyk, % <-- Printing (CMYK)
-            %gray, % <-- Gray scale
+\usepackage[%rgb,% <-- Digital (RGB)
+            cmyk,% <-- Printing (CMYK)
+            %gray,% <-- Gray scale
             table,
             xcdraw
             ]{xcolor}
 \usepackage[siunitx,
-            %americanvoltages, % <-- +- voltage
-            europeanvoltages, % <-- Arrow voltage
+            %americanvoltages,% <-- +- voltage
+            europeanvoltages,% <-- Arrow voltage
             americancurrents,
-            americanresistors, % <-- Zig-zag resistors
-            %europeanresistors, % <-- Rectangular resistors
+            americanresistors,% <-- Zig-zag resistors
+            %europeanresistors,% <-- Rectangular resistors
             americaninductors
             ]{circuitikz}
 \usepackage[hidelinks,
@@ -76,18 +77,21 @@
             namelimits,
             reqno
             ]{amsmath}
+\usepackage[style=brazilian,
+            threshold=3,
+            thresholdtype=lines
+            ]{csquotes}
 
-\usepackage{float}
-\usepackage{graphicx, svg}
-\usepackage{fancyhdr, tikz}
+\usepackage{graphicx, svg, tikz}
 \usepackage{tocloft, titlesec}
 \usepackage{amsfonts, amssymb}
-\usepackage{lipsum, booktabs, multirow}
-
-\usepackage{times, cuted, xparse}
-\usepackage{listings, csquotes}
-\usepackage{multicol, wrapfig}
-\usepackage{tabularx}
+\usepackage{tabularx, multirow}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{xparse}
 
 %\usepackage[grid]{eso-pic}
 
@@ -107,7 +111,7 @@
 
 \setmainlanguage[variant=brazilian]{portuguese}
 %\setotherlanguage[variant=american]{english}
-%\setotherlanguage{latin}
+\setotherlanguage{latin}
 
 % Spacing -------------------------------------------------
 
@@ -123,15 +127,29 @@
 \titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
 \titleformat{name=\section,numberless}{\centering\normalsize\bfseries\MakeUppercase}{}{0em}{}
 
-% Floats --------------------------------------------------
+% Quotation (csquotes) ------------------------------------
 
-\floatstyle{plain}
-\newfloat{script}{htbp}{lop}
-\floatname{script}{Programa} % Language sensitive
+\newenvironment*{directquote}
+    {\vspace{1.5cm}
+    \hfill
+    \begin{minipage}{14cm}
+        \quote
+        \simplespacing
+        \footnotesize
+    }
+    {
+        \endquote
+    \end{minipage}
+    \vspace{1.5cm}}
+
+\SetBlockEnvironment{directquote}
+
+\SetCiteCommand{\autocite}
+\renewcommand{\mkcitation}[1]{ #1}
 
 % Tabularx ------------------------------------------------
 
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.2}
 \renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
@@ -150,7 +168,7 @@
 % Appendix ------------------------------------------------
 
 \providecommand{\appendixname}{Appendix}
-\renewcommand{\appendixtocname}{Apêndices} % Language sensitive
+\renewcommand{\appendixtocname}{Apêndices}% Language sensitive
 \renewcommand{\appendixpagename}{\centering\normalsize{\MakeUppercase{Apêndices}}} % Language sensitive
 
 % Define colors -------------------------------------------
@@ -183,6 +201,13 @@
     tabsize=2
 }
 
+\lstset{frame=l,
+        firstnumber=auto,
+        captionpos=b
+}
+
+\renewcommand{\lstlistingname}{Programa}% Language sensitive
+\renewcommand{\lstlistlistingname}{Programas}% Language sensitive
 
 % Addicional commands =====================================
 
@@ -205,16 +230,6 @@
 \newcommand{\textspacing}{
     \renewcommand\baselinestretch{1.5}
     \setlength{\parskip}{6pt}
-}
-
-\newcommand{\directcite}[1]{
-    \vspace{1.5cm}
-    \hfill
-    \begin{minipage}{12cm}
-        \simplespacing
-        \footnotesize{#1}
-    \end{minipage}
-    \vspace{1.5cm}
 }
 
 % Mathematical commands -----------------------------------

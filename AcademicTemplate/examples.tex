@@ -135,7 +135,7 @@
 % Tabela --------------------------------------------------
 
 \begin{table}[htb]
-    \centering
+    \centering\footnotesize
     \caption{Exemplo de tabela}
     \label{tab:e7}
     \begin{tabularx}{0.8\textwidth}{
@@ -165,8 +165,11 @@
 
 % Bloco de código -----------------------------------------
 
-\begin{script}
-    \begin{lstlisting}[language=Python, style=Code]
+    \begin{lstlisting}[language=Python,
+        style=Code,
+        caption={Método Jacobi em Python.},
+        label={lst:jacobi},
+        name=jacobi]
 import numpy as np
 
 A = np.array([[10, 2, 1], [1, 5, 1], [2, 3, 10]], dtype=float)
@@ -188,9 +191,6 @@ def jacobi(A,b,N=25,x=None):
         x = (b - np.dot(R,x)) / D
     return x
     \end{lstlisting}
-    \caption{Método Jacobi em Python.}
-    \label{scr:jacobi}
-\end{script}
 
     No geral o que esses comando e ambiente fazem é simplesmente não compilar o que é inserido neles.
     As opções de linguagem e estilo são opcionais, no entanto facilitam a legibilidade.
@@ -248,14 +248,16 @@ def jacobi(A,b,N=25,x=None):
     Apenas os dois primeiros funcionam no formator de citações numéricas.
 
     Caso a citação seja direta e ocupe mais que três linhas ela deve estar em um bloco com formatação diferente.
-    Para gerar esse bloco, neste template, utilize o comando \lstinline[language=TeX,style=code]|\directcite{}|, como mostrado a seguir.
+    Para gerar esse bloco, neste template, utilize o ambiente \lstinline[language=TeX,style=code]|displayquote|, como mostrado a seguir.
 
 % Citação direta ------------------------------------------
 
-    \directcite{Extending the initial application scope, the IoT might also serve as backbone for
+    \begin{displayquote}[\cite{weber2010internet}][.]
+    Extending the initial application scope, the IoT might also serve as backbone for
     ubiquitous computing, enabling smart environments to recognize and identify
      objects, and retrieve information from the Internet to facilitate their adaptive
-    functionality \cite{weber2010internet}.}
+    functionality
+    \end{displayquote}
 
 % Multicolunas ============================================
 
@@ -271,21 +273,19 @@ def jacobi(A,b,N=25,x=None):
         O texto é justificado automaticamente.
         No entanto, elementos flutuantes como figuras e tabelas não podem ser inclusos no ambiente normalmente.
 
-        Para incluir figuras deve ser utilizado o ambiente \lstinline[language=TeX,style=code]|{figure*}{tb}| no lugar do tradicional \lstinline[language=TeX,style=code]|{figure}{htb}|.
-        No entando, as figuras não são posicionados no meio do texto, mas sim no topo ou base da página, ignorando a divisão das colunas, como no caso da figura \ref{fig:coluna_dupla}.
-
-        É comum que, nesse caso, a figura apareça somente na página seguinte.
-        Por isso, recomendo que, se possível, evite usar figuras nesse ambiente.
+        A forma recomendada aqui é interromper o ambiente de duas colunas, adicionar a figura ou tabela, e retomar a divisão de colunas novamente, assim como é feito para a figura \ref{fig:coluna_dupla}.
+    \end{multicols}
 
 % Figura (que ignora as colunas) --------------------------
 
-        \begin{figure*}[tb]
-            \centering
-            \includegraphics[width=120pt]{images/figure.pdf}
-            \caption{Legenda figura PNG.}
-            \label{fig:coluna_dupla}
-        \end{figure*}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=120pt]{images/figure.pdf}
+        \caption{Legenda figura PNG.}
+        \label{fig:coluna_dupla}
+    \end{figure}
         
+    \begin{multicols}{2}
         \lipsum[1][1-10]
     \end{multicols}
 
