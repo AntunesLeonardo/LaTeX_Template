@@ -325,6 +325,28 @@ def jacobi(A,b,N=25,x=None):
         \label{eq:baskara}
     \end{equation}
 
+% Números e Unidades ======================================
+
+\section{Números e Unidades}
+\label{sec:numerosunidades}
+
+    Apesar de o números poderem ser adicionados apenas como texto comum, para alguns casos o uso de comandos pode facilitar a digitação.
+
+    \begin{itemize}
+        \item Números: \lstinline|\num{32.3}| -- \num{32.3}
+        \item Ângulos: \lstinline|\ang{90}| -- \ang{90}
+        \item Intervalo: \lstinline|\numrange{1.0}{3.9}| -- \numrange{1.0}{3.9}
+        \item Multiplicação de números: \lstinline|\numproduct{5;10;2;9.4}| -- \numproduct{5 x 10 x 2 x 9.4}
+        \item Lista de números: \lstinline|\numlist{1;2;3;5;7;11}| -- \numlist{1;2;3;5;7;11}
+        \item Unidade: \lstinline|\unit{\newton\per\square\meter}| -- \unit{\newton\per\square\meter}
+        \item Unidade (abreviado): \lstinline|\unit{\N/\m^2}| -- \unit{\N/\m^2}
+        \item Quantidade (número e unidade): \lstinline|\qty{12}{\volt}| -- \qty{12}{\volt}
+        \item Intervalo de quantidade: \lstinline|\qtyrange{110}{240}{\volt}| -- \qtyrange{110}{240}{\volt}
+        \item Multiplicação de quantidades: \lstinline|\qtyproduct{5.0 x 8.5}{\meter}| -- \qtyproduct{5.0 x 8.5}{\meter}
+        \item Lista de quantidades: \lstinline|\qtylist{100;240;360}{\ohm}| -- \qtylist{100;240;360}{\ohm}
+        \item Números complexos: \lstinline|\complexnum{10+i5}| -- \complexnum{10+i5}
+        \item Quantidade complexa: \lstinline|\complexqty{15-i36}{\mili\ohm}| -- \complexqty{15-i36}{\milli\ohm}
+    \end{itemize}
 
 % Circuitos Elétricos =====================================
 

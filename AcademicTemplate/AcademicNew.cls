@@ -81,7 +81,28 @@
             threshold=3,
             thresholdtype=lines
             ]{csquotes}
-
+\usepackage[output-decimal-marker = {,},
+            exponent-product = \cdot,
+            uncertainty-mode = separate,
+            per-mode = symbol,
+            sticky-per,
+            group-digits = integer,
+            group-minimum-digits = 5,
+            group-separator = {\,},
+            list-separator = {; },
+            list-final-separator = {; e },% Language sensitive
+            list-pair-separator = { e },% Language sensitive
+            product-mode = symbol,
+            product-symbol = \ensuremath{\cdot},
+            product-units = repeat,
+            range-phrase = { a },% language sensitive
+            range-units = single,
+            %output-complex-root = \ensuremath{\imath},% <-- Complex as 'i'
+            output-complex-root = \ensuremath{\jmath},% <-- Complex as 'j'
+            complex-root-position = before-number,
+            angle-mode = decimal,
+            quantity-product = {\ }
+            ]{siunitx}
 \usepackage{graphicx, svg, tikz}
 \usepackage{tocloft, titlesec}
 \usepackage{amsfonts, amssymb}
