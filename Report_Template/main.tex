@@ -1,0 +1,39 @@
+% =========================================================
+% Main File
+% =========================================================
+
+% Bem vindo(a) a este template destinado a trabalhos
+% acadêmicos.
+% A distribuição deste template é encorajada.
+%
+% Autor: Leonardo A. Antunes
+%
+% Disponível no Github:
+% https://github.com/AntunesLeonardo/LaTeX_Template/tree/master/AcademicTemplate
+% Disponível no Overleaf:
+% https://www.overleaf.com/read/ykrhfdnzzsnz
+
+\documentclass{Report}
+
+\author{Autor}
+\title{Título}
+\subtitle{Subtítulo}
+\city{Cidade}
+\date{Ano}
+
+\institution{Universidade universidade universidade}
+\graduation{Curso}
+\professor{Docente: Nome Sobrenome}
+\note{Breve descrisão do trabalho Breve descrisão do trabalho Breve descrisão do trabalho}
+
+% Comente os elementos não desejados no seu projeto:
+
+\begin{document}
+    \cover
+    \titlePage
+    \contents
+    \input{contents.tex}
+    \input{examples.tex} % <-- Comentar exemplos
+    \biblio
+    \include{appendices.tex}
+\end{document}
