@@ -1,11 +1,11 @@
-This is LuaHBTeX, Version 1.15.0 (MiKTeX 22.3) (format=lualatex 2022.7.12)  11 SEP 2022 21:00
+This is LuaHBTeX, Version 1.15.0 (MiKTeX 22.3) (format=lualatex 2022.7.12)  25 JUL 2022 11:51
  system commands enabled.
  file:line:error style messages enabled.
-**"c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/mai
-n.tex"
+**"c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/AcademicTemplate/ma
+in.tex"
 
-("c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/main
-.tex"
+("c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/AcademicTemplate/mai
+n.tex"
 LaTeX2e <2022-06-01> patch level 3
 Lua module: luaotfload 2022-06-15 3.22 Lua based OpenType font support
 Lua module: lualibs 2021-05-20 2.74 ConTeXt Lua standard libraries.
@@ -50,8 +50,8 @@ Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
 Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
 . L3 programming layer <2022-06-16>
-Inserting `tracingstacklevels' at position 1 in `input_level_string'. (./Report
-New.cls
+Inserting `tracingstacklevels' at position 1 in `input_level_string'. (./Academ
+icNew.cls
 (C:/Users/antun/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (C:/Users/antun/AppData/Local/Programs/MiKTeX/tex/latex/base/size12.clo
@@ -1595,12 +1595,12 @@ braces):
 >  {portuguese/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {portuguese/DefineCommandsCmd}  =>  {xpg_define_language_commands:e}.
 Module polyglossia Info: Language data for portuges
-(polyglossia)            synonyms	portuges
 (polyglossia)            loader	loadhyph-pt.tex
-(polyglossia)            hyphenation	hyph-pt.hyp.txt
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            patterns	hyph-pt.pat.txt
-(polyglossia)            righthyphenmin	3 on input line 10
+(polyglossia)            righthyphenmin	3
+(polyglossia)            synonyms	portuges
+(polyglossia)            hyphenation	hyph-pt.hyp.txt
+(polyglossia)            lefthyphenmin	2 on input line 10
 Module polyglossia Info: Language portuges was not yet loaded; created with id 3
  on input line 10
 
@@ -1683,12 +1683,12 @@ braces):
 >  {latin/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {latin/DefineCommandsCmd}  =>  {xpg_define_language_commands:e}.
 Module polyglossia Info: Language data for latin
-(polyglossia)            synonyms	
 (polyglossia)            loader	loadhyph-la.tex
-(polyglossia)            hyphenation	
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            patterns	hyph-la.pat.txt
-(polyglossia)            righthyphenmin	2 on input line 12
+(polyglossia)            righthyphenmin	2
+(polyglossia)            synonyms	
+(polyglossia)            hyphenation	
+(polyglossia)            lefthyphenmin	2 on input line 12
 Module polyglossia Info: Language latin was not yet loaded; created with id 4 on
  input line 12
 Lua-only attribute polyglossia_punct = 4
@@ -2333,7 +2333,7 @@ Here is how much of LuaTeX's memory you used:
 11:521
  79957 multiletter control sequences out of 65536+600000
  87 fonts using 26329591 bytes
- 130i,17n,138p,1203b,4433s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 130i,17n,138p,1204b,4433s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Windows/Fonts/timesi.ttf><C:/Windows/Fonts/cour.ttf><C:/Windows/Fonts/timesb
 d.ttf><C:/Windows/Fonts/times.ttf><C:/Users/antun/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/antun/AppData/Local/Programs

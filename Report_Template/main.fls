@@ -1,5 +1,5 @@
-PWD c:\Users\antun\Desktop\Internet Explorer\LaTeX_Templates\Report_Template
-INPUT c:\Users\antun\Desktop\Internet Explorer\LaTeX_Templates\Report_Template\main.tex
+PWD c:\Users\antun\Desktop\Internet Explorer\LaTeX_Templates\AcademicTemplate
+INPUT c:\Users\antun\Desktop\Internet Explorer\LaTeX_Templates\AcademicTemplate\main.tex
 OUTPUT main.log
 OUTPUT main.log
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\latex\latexconfig\lualatexquotejobname.lua
@@ -57,12 +57,12 @@ INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\luatex\luaotfload\luaotfl
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\luatex\luaotfload\luaotfload-tounicode.lua
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\luatex\luaotfload\luaotfload-case.lua
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.lua
-INPUT .\ReportNew.cls
-INPUT .\ReportNew.cls
-INPUT .\ReportNew.cls
-INPUT .\ReportNew.cls
-INPUT .\ReportNew.cls
-INPUT .\ReportNew.cls
+INPUT .\AcademicNew.cls
+INPUT .\AcademicNew.cls
+INPUT .\AcademicNew.cls
+INPUT .\AcademicNew.cls
+INPUT .\AcademicNew.cls
+INPUT .\AcademicNew.cls
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\antun\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
