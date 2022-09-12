@@ -46,8 +46,8 @@
 
     \begin{figure}[htb]
         \centering
-        %\includegraphics[width=120pt]{images/figure.png}
-        \includesvg[width=120pt]{images/figure.svg}
+        \includegraphics[width=120pt]{images/figure.png}
+        %\includesvg[width=120pt]{images/figure.svg}
         \caption{Legenda.}
         \label{fig:e4}
     \end{figure}
@@ -116,7 +116,8 @@
         \hfill
         \begin{subfigure}[t]{0.3\textwidth}
             \centering
-            \includesvg[width=\textwidth]{images/figure.svg}
+            \includegraphics[width=\textwidth]{images/figure.pdf}
+            %\includesvg[width=\textwidth]{images/figure.svg}
             \caption{Figura SVG}
             \label{subfig:svg}
         \end{subfigure}
@@ -238,11 +239,7 @@ def jacobi(A,b,N=25,x=None):
 
     \begin{itemize}
         \item Com Autores e ano em parêntesis -- \cite{wortmann2015internet}
-        \item Com autores fora e ano dentro dos parêntesis -- \textcite{weber2010internet}
-        \item Com título fora e ano dentro dos parêntesis -- \citetitle{wortmann2015internet}
         \item Apenas autores entre parêntesis -- \citeauthor{ashton2009internet}
-        \item Apenas o ano entre parêntesis -- \citeyear{yoo2010research}
-        \item Ou \textit{apud}, onde o primeiro autor é citado pelo segundo -- \apud{yoo2010research}{wortmann2015internet}
     \end{itemize}
 
     Apenas os dois primeiros funcionam no formator de citações numéricas.

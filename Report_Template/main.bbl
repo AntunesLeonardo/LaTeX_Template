@@ -122,50 +122,6 @@
       \field{pages}{221\bibrangedash 224}
       \range{pages}{4}
     \endentry
-    \entry{yoo2010research}{article}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=ea200acf2e05c7416993e8f1f85f000e}{%
-           family={Yoo},
-           familyi={Y\bibinitperiod},
-           given={Youngjin},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=7e75377b05d5d70bf875340f2da582af}{%
-           family={Henfridsson},
-           familyi={H\bibinitperiod},
-           given={Ola},
-           giveni={O\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4c2680a1c095d8da69181b354aecbcf3}{%
-           family={Lyytinen},
-           familyi={L\bibinitperiod},
-           given={Kalle},
-           giveni={K\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {INFORMS}%
-      }
-      \strng{namehash}{7f7d65036604a4f398baa3f8a6ae7085}
-      \strng{fullhash}{7f7d65036604a4f398baa3f8a6ae7085}
-      \strng{bibnamehash}{7f7d65036604a4f398baa3f8a6ae7085}
-      \strng{authorbibnamehash}{7f7d65036604a4f398baa3f8a6ae7085}
-      \strng{authornamehash}{7f7d65036604a4f398baa3f8a6ae7085}
-      \strng{authorfullhash}{7f7d65036604a4f398baa3f8a6ae7085}
-      \field{sortinit}{Y}
-      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Information systems research}
-      \field{number}{4}
-      \field{title}{Research commentary—the new organizing logic of digital innovation: an agenda for information systems research}
-      \field{volume}{21}
-      \field{year}{2010}
-      \field{pages}{724\bibrangedash 735}
-      \range{pages}{12}
-    \endentry
   \enddatalist
 \endrefsection
 \endinput

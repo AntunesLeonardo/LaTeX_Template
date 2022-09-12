@@ -2,13 +2,14 @@
 % Class File
 % =========================================================
 
-\LoadClass[12pt]{article}
+\LoadClass[12pt]{report}
 
 % Package input -------------------------------------------
 
-\usepackage{polyglossia}
 \usepackage{luainputenc}
 \usepackage{fontspec}
+\usepackage[brazil
+            ]{babel}
 \usepackage[a4paper,
             portrait,
             onecolumn,
@@ -127,12 +128,6 @@
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
-
-% Languages -----------------------------------------------
-
-\setmainlanguage[variant=brazilian]{portuguese}
-%\setotherlanguage[variant=american]{english}
-\setotherlanguage{latin}
 
 % Spacing -------------------------------------------------
 
