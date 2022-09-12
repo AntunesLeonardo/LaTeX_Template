@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.8.28) (format=lualatex 2022.9.11)  11 SEP 2022 23:33
+This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.8.28) (format=lualatex 2022.9.11)  11 SEP 2022 23:37
  system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/mai
@@ -1936,11 +1936,20 @@ File: lstlang3.sty 2020/03/24 1.8d listings language file
 (C:/Users/antun/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-<images/figure.png, id=62, 90.3375pt x 90.3375pt>
-File: images/figure.png Graphic file (type png)
-<use images/figure.png>
-Package luatex.def Info: images/figure.png  used on input line 49.
-(luatex.def)             Requested size: 120.0pt x 120.00122pt.
+Package svg Info: Last page of `./svg-inkscape/figure_svg-tex.pdf' is 1 on inpu
+t line 50.
+
+(./svg-inkscape/figure_svg-tex.pdf_tex
+<./svg-inkscape/figure_svg-tex.pdf, id=63, page=1, 89.43178pt x 64.20743pt>
+File: ./svg-inkscape/figure_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/figure_svg-tex.pdf, page 1>
+Package luatex.def Info: ./svg-inkscape/figure_svg-tex.pdf , page1 used on inpu
+t line 56.
+(luatex.def)             Requested size: 120.0pt x 86.15506pt.
+) [1{C:/Users/antun/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+<./svg-inkscape/figure_svg-tex.pdf>]
+<images/figure.png, id=90, 90.3375pt x 90.3375pt>
 File: images/figure.png Graphic file (type png)
 <use images/figure.png>
 Package luatex.def Info: images/figure.png  used on input line 65.
@@ -1957,15 +1966,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
 (C:/Users/antun/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/figure.pdf, id=67, 90.3375pt x 90.3375pt>
+<images/figure.pdf, id=91, 90.3375pt x 90.3375pt>
 File: images/figure.pdf Graphic file (type pdf)
 <use images/figure.pdf>
 Package luatex.def Info: images/figure.pdf  used on input line 72.
 (luatex.def)             Requested size: 120.0pt x 120.00122pt.
-
-[1{C:/Users/antun/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
-
-]
 File: images/figure.pdf Graphic file (type pdf)
 <use images/figure.pdf>
 Package luatex.def Info: images/figure.pdf  used on input line 85.
@@ -1978,11 +1983,16 @@ File: images/figure.pdf Graphic file (type pdf)
 <use images/figure.pdf>
 Package luatex.def Info: images/figure.pdf  used on input line 112.
 (luatex.def)             Requested size: 136.57462pt x 136.58797pt.
-File: images/figure.pdf Graphic file (type pdf)
-<use images/figure.pdf>
-Package luatex.def Info: images/figure.pdf  used on input line 119.
-(luatex.def)             Requested size: 136.57462pt x 136.58797pt.
- [2<./images/figure.png><./images/figure.pdf>]
+Package svg Info: Last page of `./svg-inkscape/figure_svg-tex.pdf' is 1 on inpu
+t line 120.
+
+(./svg-inkscape/figure_svg-tex.pdf_tex
+File: ./svg-inkscape/figure_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/figure_svg-tex.pdf, page 1>
+Package luatex.def Info: ./svg-inkscape/figure_svg-tex.pdf , page1 used on inpu
+t line 56.
+(luatex.def)             Requested size: 136.57462pt x 98.06361pt.
+) [2<./images/figure.png><./images/figure.pdf>]
 (C:/Users/antun/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -2013,14 +2023,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 60177 strings out of 477356
- 305502,2848258 words of node,token memory allocated
+ 60239 strings out of 477356
+ 195521,2848258 words of node,token memory allocated
  837 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 22 attribute, 105 glue_spe
 c, 13 attribute_list, 2 write nodes
-   avail lists: 1:4,2:5304,3:1351,4:5162,5:5616,6:99,7:7698,8:48,9:13724,10:30,1
-1:659
- 79448 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:4821,3:1333,4:3854,5:4161,6:105,7:5932,8:37,9:10193,10:30,
+11:521
+ 79468 multiletter control sequences out of 65536+600000
  87 fonts using 26329591 bytes
  130i,13n,124p,1203b,4308s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Windows/Fonts/timesi.ttf><C:/Windows/Fonts/cour.ttf><C:/Windows/Fonts/timesb
@@ -2030,9 +2040,9 @@ fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/antun/AppData/Local/Programs
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/antun/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/antun/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (10 pages, 224512 bytes).
+Output written on main.pdf (10 pages, 228476 bytes).
 
-PDF statistics: 229 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 244 PDF objects out of 1000 (max. 8388607)
  59 named destinations out of 1000 (max. 131072)
  128 words of extra memory for PDF output out of 10000 (max. 100000000)
 
