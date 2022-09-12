@@ -1,0 +1,172 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{ashton2009internet}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2710e37a7e37dd6f0a784ffd7e37e589}{%
+           family={Ashton},
+           familyi={A\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fcb66178432246eee8c406a5db4744ad}
+      \strng{fullhash}{fcb66178432246eee8c406a5db4744ad}
+      \strng{bibnamehash}{fcb66178432246eee8c406a5db4744ad}
+      \strng{authorbibnamehash}{fcb66178432246eee8c406a5db4744ad}
+      \strng{authornamehash}{fcb66178432246eee8c406a5db4744ad}
+      \strng{authorfullhash}{fcb66178432246eee8c406a5db4744ad}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{RFID journal}
+      \field{number}{7}
+      \field{title}{That ‘internet of things’ thing}
+      \field{volume}{22}
+      \field{year}{2009}
+      \field{pages}{97\bibrangedash 114}
+      \range{pages}{18}
+    \endentry
+    \entry{weber2010internet}{book}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=5745f0baae034a5bd8400a0852b11cbe}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Rolf\bibnamedelima H.},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=3bd10276b5f482f805dfb1200e557e5a}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Romana},
+           giveni={R\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{fullhash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{bibnamehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{authorbibnamehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{authornamehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{authorfullhash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Internet of things}
+      \field{volume}{12}
+      \field{year}{2010}
+    \endentry
+    \entry{wortmann2015internet}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fd9a8756e8a15d6611917de492d210dc}{%
+           family={Wortmann},
+           familyi={W\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=256575756cb544b9ea07af62dc60a3ef}{%
+           family={Flüchter},
+           familyi={F\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{45c2f34fce6c8cbdcb974f49e526e068}
+      \strng{fullhash}{45c2f34fce6c8cbdcb974f49e526e068}
+      \strng{bibnamehash}{45c2f34fce6c8cbdcb974f49e526e068}
+      \strng{authorbibnamehash}{45c2f34fce6c8cbdcb974f49e526e068}
+      \strng{authornamehash}{45c2f34fce6c8cbdcb974f49e526e068}
+      \strng{authorfullhash}{45c2f34fce6c8cbdcb974f49e526e068}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Business \& Information Systems Engineering}
+      \field{number}{3}
+      \field{title}{Internet of things}
+      \field{volume}{57}
+      \field{year}{2015}
+      \field{pages}{221\bibrangedash 224}
+      \range{pages}{4}
+    \endentry
+    \entry{yoo2010research}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=ea200acf2e05c7416993e8f1f85f000e}{%
+           family={Yoo},
+           familyi={Y\bibinitperiod},
+           given={Youngjin},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e75377b05d5d70bf875340f2da582af}{%
+           family={Henfridsson},
+           familyi={H\bibinitperiod},
+           given={Ola},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c2680a1c095d8da69181b354aecbcf3}{%
+           family={Lyytinen},
+           familyi={L\bibinitperiod},
+           given={Kalle},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {INFORMS}%
+      }
+      \strng{namehash}{7f7d65036604a4f398baa3f8a6ae7085}
+      \strng{fullhash}{7f7d65036604a4f398baa3f8a6ae7085}
+      \strng{bibnamehash}{7f7d65036604a4f398baa3f8a6ae7085}
+      \strng{authorbibnamehash}{7f7d65036604a4f398baa3f8a6ae7085}
+      \strng{authornamehash}{7f7d65036604a4f398baa3f8a6ae7085}
+      \strng{authorfullhash}{7f7d65036604a4f398baa3f8a6ae7085}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information systems research}
+      \field{number}{4}
+      \field{title}{Research commentary—the new organizing logic of digital innovation: an agenda for information systems research}
+      \field{volume}{21}
+      \field{year}{2010}
+      \field{pages}{724\bibrangedash 735}
+      \range{pages}{12}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
