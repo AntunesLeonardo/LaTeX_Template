@@ -13,12 +13,12 @@
 \usepackage[a4paper,
             portrait,
             onecolumn,
-            includeheadfoot,
+            %includeheadfoot,
             twoside=false,
             top=30mm,
             bottom=20mm,
-            left=30mm,
-            right=20mm
+            left=25mm,
+            right=25mm
             ]{geometry}
 \usepackage[style=abnt, sorting=nty,% <-- Autor-data
             %style=abnt-numeric, sorting=none,% <-- Numérico
@@ -105,6 +105,7 @@
             ]{siunitx}
 \usepackage{graphicx, svg, tikz}
 %\usepackage{pgfplots}
+%\usepackage{background}
 \usepackage{tocloft, titlesec}
 \usepackage{amsfonts, amssymb}
 \usepackage{tabularx, multirow}
@@ -129,6 +130,10 @@
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
 
+% Cover Background ----------------------------------------
+
+
+
 % Spacing -------------------------------------------------
 
 \renewcommand{\baselinestretch}{1.5}
@@ -138,10 +143,14 @@
 
 % Section style (titlesec) --------------------------------
 
-\titleformat{\section}{\normalsize\bfseries\MakeUppercase}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalsize\bfseries\MakeUppercase}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalsize\bfseries\MakeUppercase}{\thesubsubsection}{1em}{}
-\titleformat{name=\section,numberless}{\centering\normalsize\bfseries\MakeUppercase}{}{0em}{}
+\titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\MakeUppercase}{\thesubsection}{1em}{}
+\titleformat{name=\section,numberless}{\centering\large\bfseries\MakeUppercase}{}{0em}{}
+
+\titleformat{\chapter}[frame]
+{\normalfont}
+{\filright\normalsize\enspace \MakeUppercase{\chaptername} \thechapter\enspace}
+{8pt}{\LARGE\bfseries\filcenter}
 
 % Quotation (csquotes) ------------------------------------
 
@@ -173,13 +182,23 @@
 
 % Header/Footer -------------------------------------------
 
-\fancypagestyle{academic-plain}{
+\fancypagestyle{report-plain}{
     \fancyhf{}
-    \fancyhead[R]{\footnotesize{\thepage}}
-    \renewcommand{\headrulewidth}{0pt}
+    \fancyhead[L]{\footnotesize{\@subject}}
+    \fancyhead[R]{\footnotesize{\chaptername\ \thechapter}}
+    \renewcommand{\headrulewidth}{1pt}
     \setlength\headheight{14pt}
+
+    \fancyfoot[C]{\footnotesize{\thepage}}
 }
-\pagestyle{academic-plain}
+\fancypagestyle{report-footonly}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[C]{\footnotesize{\thepage}}
+}
+
+\pagestyle{report-plain}
+\assignpagestyle{\chapter}{report-footonly}
 
 % Appendix ------------------------------------------------
 
@@ -195,6 +214,8 @@
 \definecolor{codeblue}{rgb}{0,0,0.6}
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\definecolor{gray}{HTML}{363636}
 
 % Listing -------------------------------------------------
 
@@ -229,12 +250,10 @@
 
 % Storing values ------------------------------------------
 
-\newcommand{\subtitle}{\newcommand{\@subtitle}}
 \newcommand{\institution}{\newcommand{\@institution}}
 \newcommand{\graduation}{\newcommand{\@graduation}}
-\newcommand{\city}{\newcommand{\@city}}
-\newcommand{\note}{\newcommand{\@note}}
 \newcommand{\professor}{\newcommand{\@professor}}
+\newcommand{\subject}{\newcommand{\@subject}}
 
 % Quick spacing commands ----------------------------------
 
@@ -250,10 +269,6 @@
 
 % Mathematical commands -----------------------------------
 
-\newcommand{\uncert}[2]{
-    \ensuremath #1 \pm #2
-}
-
 \DeclareDocumentCommand\deriv{ m m g }{%
     {\ensuremath\frac{d\IfNoValueF{#3}{^#3} #1}{d#2\IfNoValueF{#3}{^#3}}
     }%
@@ -268,10 +283,6 @@
     \ensuremath\text{sen}
 }
 
-\newcommand{\E}[1]{
-    \ensuremath\cdot 10^#1
-}
-
 % Pretextual elements =====================================
 
 % Cover ---------------------------------------------------
@@ -279,47 +290,31 @@
 \newcommand{\cover}{
     \thispagestyle{empty}
     \begin{center}
-        \MakeUppercase{\@institution}\\
-        \MakeUppercase{\@graduation}\\
-        \vspace{36pt}
-        \MakeUppercase{\@author}\\
-        \vspace{144pt}
-        \MakeUppercase{\textbf{\@title}}\\
-        {\@subtitle}\\
-        \vfill
-        \MakeUppercase{\@city}\\
-        \MakeUppercase{\@date}
+        \Large{\@author}
+    \end{center}
+    \vspace{15mm}
+    \begin{flushleft}
+
+        \hspace{0.1\textwidth}
+        \noindent\parbox{0.6\textwidth}{%
+            \raggedleft\MakeUppercase{\bfseries{\fontsize{35pt}{35pt}\selectfont \@title\\}}
+        }\\%
+        \vspace{7mm}\hspace{0.59\textwidth}
+        \noindent\parbox{0.4\textwidth}{%
+            \raggedright\textcolor{gray}{\MakeUppercase{\bfseries{\fontsize{20pt}{20pt}\selectfont \@professor\\}}}
+        }%
+    \end{flushleft}
+    \vfill
+    \begin{center}
+        \Large{\@institution\\\@graduation\ --\ \@date}
     \end{center}
     \newpage
     \setcounter{page}{1}
 }
 
-% Title page ----------------------------------------------
-
-\newcommand{\titlePage}{
-    \thispagestyle{empty}
-    \begin{center}
-        \MakeUppercase{\@author}\\
-        \vspace{144pt}
-        \MakeUppercase{\textbf{\@title}}\\
-        {\@subtitle}\\
-        \vspace{72pt}
-        \hspace{9.9cm}
-        \begin{minipage}{6cm}
-            {\@note}\break
-            \\ \hfill
-            {\@professor}
-        \end{minipage}\\ \hfil
-        \vfill
-        \MakeUppercase{\@city}\\
-        \MakeUppercase{\@date}
-    \end{center}
-    \newpage
-}
-
 % Table of contents ---------------------------------------
 
-\renewcommand{\cfttoctitlefont}{\normalfont\normalsize\bfseries\MakeUppercase}
+\renewcommand{\cfttoctitlefont}{\normalfont\large\bfseries\MakeUppercase}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand\cftsecfont{\mdseries}
 \renewcommand\cftsecpagefont{\mdseries}
@@ -337,13 +332,4 @@
         \thispagestyle{empty}
     \end{center}
     \newpage
-}
-
-% References ----------------------------------------------
-
-\newcommand{\biblio}{
-    \newpage
-    \begin{center}
-        \printbibliography[heading=bibintoc]
-    \end{center}
 }

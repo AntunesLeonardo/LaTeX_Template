@@ -255,10 +255,6 @@
 
 % Mathematical commands -----------------------------------
 
-\newcommand{\uncert}[2]{
-    \ensuremath #1 \pm #2
-}
-
 \DeclareDocumentCommand\deriv{ m m g }{%
     {\ensuremath\frac{d\IfNoValueF{#3}{^#3} #1}{d#2\IfNoValueF{#3}{^#3}}
     }%

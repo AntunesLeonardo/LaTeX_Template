@@ -17,7 +17,7 @@
 \endgroup
 
 
-\refsection{0}
+\refsection{1}
   \datalist[entry]{nty/global//global/global}
     \entry{ashton2009internet}{article}{}
       \true{moreauthor}
@@ -121,6 +121,45 @@
       \field{year}{2015}
       \field{pages}{221\bibrangedash 224}
       \range{pages}{4}
+    \endentry
+  \enddatalist
+\endrefsection
+
+\refsection{2}
+  \datalist[entry]{nty/global//global/global}
+    \entry{weber2010internet}{book}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=5745f0baae034a5bd8400a0852b11cbe}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Rolf\bibnamedelima H.},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=3bd10276b5f482f805dfb1200e557e5a}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Romana},
+           giveni={R\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{fullhash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{bibnamehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{authorbibnamehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{authornamehash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \strng{authorfullhash}{4f296de09bb2654bce2e21dcc43fc4b1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Internet of things}
+      \field{volume}{12}
+      \field{year}{2010}
     \endentry
   \enddatalist
 \endrefsection

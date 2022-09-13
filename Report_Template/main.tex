@@ -15,20 +15,27 @@
 
 \documentclass{ReportNew}
 
-\author{Autor}
-\title{Título}
-\subtitle{Subtítulo}
-\city{Cidade}
-\date{Ano}
+\author{Leonardo Augusto Antunes}
+\title{Introdução à Sistemas de Engenharia Elétrica}
+\subject{ISEE}
+\date{2022}
 
-\institution{Universidade universidade universidade}
-\graduation{Curso}
-\professor{Docente: Nome Sobrenome}
-\note{Breve descrisão do trabalho Breve descrisão do trabalho Breve descrisão do trabalho}
+\institution{Universidade Estadual do Oeste do Paraná}
+\graduation{Engenharia Elétrica}
+\professor{Professor Roberto Cayetano Lotero}
 
 % Comente os elementos não desejados no seu projeto:
 
 \begin{document}
-    \input{examples.tex} % <-- Comentar exemplos
-    \biblio
+    \cover
+    \contents
+    \begin{refsection}
+        \input{examples.tex} % <-- Comentar exemplos
+        \printbibliography[heading=subbibliography]
+    \end{refsection}
+    \begin{refsection}
+        \chapter{Bolo de maçã com canela e doce de leite, acompanhado por café preto}
+        \cite{weber2010internet}
+        \printbibliography[heading=subbibliography]
+    \end{refsection}
 \end{document}
