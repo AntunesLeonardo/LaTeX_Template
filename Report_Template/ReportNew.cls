@@ -318,18 +318,17 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand\cftsecfont{\mdseries}
 \renewcommand\cftsecpagefont{\mdseries}
-\tocloftpagestyle{fancy}
-\setlength{\cftsecindent}{0pt}
-\setlength{\cftsubsecindent}{0pt}
-\setlength{\cftsubsubsecindent}{0pt}
-\setlength{\cftbeforesecskip}{6pt}
-\setlength{\cftbeforesubsecskip}{6pt}
-\setlength{\cftbeforesubsubsecskip}{6pt}
+\tocloftpagestyle{empty}
+\setlength{\cftchapindent}{0pt}
+\setlength{\cftsecindent}{8pt}
+\setlength{\cftsubsecindent}{8pt}
+\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforesecskip}{3pt}
+\setlength{\cftbeforesubsecskip}{3pt}
 
 \newcommand{\contents}{
     \begin{center}
         \tableofcontents
-        \thispagestyle{empty}
     \end{center}
     \newpage
 }
