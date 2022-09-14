@@ -105,7 +105,6 @@
             ]{siunitx}
 \usepackage{graphicx, svg, tikz}
 %\usepackage{pgfplots}
-%\usepackage{background}
 \usepackage{tocloft, titlesec}
 \usepackage{amsfonts, amssymb}
 \usepackage{tabularx, multirow}
@@ -115,6 +114,7 @@
 \usepackage{float}
 \usepackage{lipsum}
 \usepackage{xparse}
+\usetikzlibrary{calc}
 
 %\usepackage[grid]{eso-pic}
 
@@ -129,10 +129,6 @@
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
-
-% Cover Background ----------------------------------------
-
-
 
 % Spacing -------------------------------------------------
 
@@ -215,7 +211,10 @@
 \definecolor{codered}{rgb}{0.6,0,0}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\definecolor{gray}{HTML}{363636}
+\definecolor{covertext}{cmyk}{0.00,0.00,0.00,0.90}
+\definecolor{coverfront}{cmyk}{0.00,0.00,0.00,0.75}
+\definecolor{coverback}{cmyk}{0.66,0.00,0.00,0.40}
+%\definecolor{coverback}{HTML}{e0b800}
 
 % Listing -------------------------------------------------
 
@@ -289,6 +288,11 @@
 
 \newcommand{\cover}{
     \thispagestyle{empty}
+
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[color=coverback,opacity=1] (current page.south west) -- (current page.south east) --(current page.north east) -- ($(current page.north east)+(-3,0)$);
+        \fill[color=coverfront,opacity=1] (current page.south west) -- (current page.south east) -- ($(current page.south east)+(0,6)$);
+    \end{tikzpicture}
     \begin{center}
         \Large{\@author}
     \end{center}
@@ -301,7 +305,7 @@
         }\\%
         \vspace{7mm}\hspace{0.59\textwidth}
         \noindent\parbox{0.4\textwidth}{%
-            \raggedright\textcolor{gray}{\MakeUppercase{\bfseries{\fontsize{20pt}{20pt}\selectfont \@professor\\}}}
+            \raggedright\textcolor{covertext}{\MakeUppercase{\bfseries{\fontsize{20pt}{20pt}\selectfont \@professor\\}}}
         }%
     \end{flushleft}
     \vfill

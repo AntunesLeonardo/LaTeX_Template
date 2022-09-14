@@ -1,25 +1,17 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'main.blg'
-[132] biber-MSWIN64:340> INFO - === 
-[177] Biber.pm:418> INFO - Reading 'main.bcf'
-[318] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
-[318] Biber.pm:978> INFO - Found 3 citekeys in bib section 1
-[318] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
-[318] Biber.pm:978> INFO - Found 1 citekeys in bib section 2
-[319] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
-[348] Biber.pm:4401> INFO - Processing section 1
-[361] Biber.pm:4592> INFO - Looking for bibtex file 'bibliography.bib' for section 1
-[423] bibtex.pm:1713> INFO - LaTeX decoding ...
-[433] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
-[488] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[488] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[488] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[488] Biber.pm:4227> INFO - No sort tailoring available for locale 'pt-BR'
-[492] Biber.pm:4401> INFO - Processing section 2
-[492] Biber.pm:4592> INFO - Looking for bibtex file 'bibliography.bib' for section 2
-[532] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[532] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[532] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[532] Biber.pm:4227> INFO - No sort tailoring available for locale 'pt-BR'
-[534] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[537] bbl.pm:757> INFO - Output to main.bbl
+[136] biber-MSWIN64:340> INFO - === 
+[178] Biber.pm:418> INFO - Reading 'main.bcf'
+[314] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[315] Biber.pm:978> INFO - Found 3 citekeys in bib section 1
+[315] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[337] Biber.pm:4401> INFO - Processing section 1
+[351] Biber.pm:4592> INFO - Looking for bibtex file 'bibliography.bib' for section 1
+[409] bibtex.pm:1713> INFO - LaTeX decoding ...
+[418] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
+[478] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[478] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[478] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[478] Biber.pm:4227> INFO - No sort tailoring available for locale 'pt-BR'
+[483] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[486] bbl.pm:757> INFO - Output to main.bbl

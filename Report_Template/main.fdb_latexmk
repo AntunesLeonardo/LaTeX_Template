@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber main"] 1663035304 "main.bcf" "main.bbl" "main" 1663074272
+["biber main"] 1663115791 "main.bcf" "main.bbl" "main" 1663115808
   "bibliography.bib" 1658247484 969 8dd7dab655d1daf69c80f4c4432214a5 ""
-  "main.bcf" 1663074271 113349 4a9443a42532c80c9a37fa49b31a2f54 "lualatex"
+  "main.bcf" 1663115807 112647 8e2aa3c727f8dec59d3a139fbc001e2e "lualatex"
   (generated)
   "main.bbl"
   "main.blg"
-["lualatex"] 1663074262 "c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/main.tex" "main.pdf" "main" 1663074272
+["lualatex"] 1663115801 "c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/main.tex" "main.pdf" "main" 1663115808
   "C:/Users/antun/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1663034807 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/antun/AppData/Local/MiKTeX/luatex-cache/generic/fonts/otl/cour.luc" 1657677562 440187 da897893b59827e0fd3fb493520b0a95 ""
   "C:/Users/antun/AppData/Local/MiKTeX/luatex-cache/generic/fonts/otl/courbd.luc" 1657677562 443472 6aaec3268ef5cd4d88aa7a230f7f1531 ""
@@ -326,18 +326,18 @@
   "C:/Windows/Fonts/times.ttf" 1575709707 1195688 75285327ea5e138c42cd2155987a9c17 ""
   "C:/Windows/Fonts/timesbd.ttf" 1575709707 1175904 ce1ec21514f3b4389faa1aea7b15df02 ""
   "C:/Windows/Fonts/timesi.ttf" 1575709707 940288 2e5033fcfa377646411abf6ae96f7e9c ""
-  "ReportNew.cls" 1663074260 9688 0fbd9777d9a45d49c5f7f570f5caaaa6 ""
-  "c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/main.tex" 1663033970 1223 26a9a4add15c8580a22ff3d3fb37a67f ""
+  "ReportNew.cls" 1663115627 10162 77a0d73e87af6c3f009ddd12289f513c ""
+  "c:/Users/antun/Desktop/Internet Explorer/LaTeX_Templates/Report_Template/main.tex" 1663115784 981 c239bc3a1672463cd25dc917ea4d4341 ""
   "examples.tex" 1663029501 15630 df908162d8eaedc6ef7f7b604afdde0f ""
   "images/figure.pdf" 1642690577 3315 65d150552dda01510fc6b7d897990b2e ""
   "images/figure.png" 1642614583 5502 ee7a44d9776bbbd48337d78676341846 ""
   "images/figure.svg" 1662945148 5224 9b5001561e1d20f07ee179ba762480f3 ""
-  "main.aux" 1663074271 7031 80f7f5f58080c37c419ea429efeffcf9 "lualatex"
-  "main.bbl" 1663035307 6157 d45bb431b6a1628a0dceff7499747d51 "biber main"
-  "main.out" 1663074271 2235 d7d8b0b9cfd663b2acde5a21df00190c "lualatex"
-  "main.run.xml" 1663074271 2480 ca0090c22b31c7f2b9ee093a5810cdbb "lualatex"
-  "main.tex" 1663033970 1223 26a9a4add15c8580a22ff3d3fb37a67f ""
-  "main.toc" 1663074271 1202 a87aec85f97e89d9871036189fcef0f5 "lualatex"
+  "main.aux" 1663115807 6558 5934bde2c8ab44b6b9e7e9fb737b63c0 "lualatex"
+  "main.bbl" 1663115794 4692 d53fd0a02f4736f0d11e1ee46d9ed3da "biber main"
+  "main.out" 1663115807 1811 87c4b59f36a7eeecaa1bce9526f28906 "lualatex"
+  "main.run.xml" 1663115807 2480 ca0090c22b31c7f2b9ee093a5810cdbb "lualatex"
+  "main.tex" 1663115784 981 c239bc3a1672463cd25dc917ea4d4341 ""
+  "main.toc" 1663115807 1075 306907bc87a7d419068b34fb80f98ccb "lualatex"
   "svg-inkscape/figure_svg-tex.pdf" 1662950249 4245 0e3f0dbe45692c1ca76d2fa137ed40ae ""
   "svg-inkscape/figure_svg-tex.pdf_tex" 1662950249 2083 0baed2f8d88eaf55dbf47fbee3e5e67e ""
   (generated)
