@@ -97,9 +97,12 @@
             product-units = repeat,
             range-phrase = { a },% language sensitive
             range-units = single,
+            complex-mode = input,
             %output-complex-root = \ensuremath{\imath},% <-- Complex as 'i'
             output-complex-root = \ensuremath{\jmath},% <-- Complex as 'j'
             complex-root-position = before-number,
+            %complex-angle-unit = radians,% <-- Complex angle as radian
+            complex-angle-unit = degrees,% <-- Complex angle as degrees
             angle-mode = decimal,
             quantity-product = {\ }
             ]{siunitx}
@@ -114,7 +117,7 @@
 \usepackage{float}
 \usepackage{lipsum}
 \usepackage{xparse}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc,shapes,arrows}
 
 %\usepackage[grid]{eso-pic}
 
@@ -168,6 +171,44 @@
 \SetCiteCommand{\autocite}
 \renewcommand{\mkcitation}[1]{ #1}
 
+% TiKz - Block diagram ------------------------------------
+
+\tikzset{input/.style={
+    coordinate}
+}
+
+\tikzset{output/.style={
+    coordinate}
+}
+
+\tikzset{block/.style={
+    draw,
+    rectangle, 
+    minimum height=10mm,
+    minimum width=12mm
+    }
+}
+
+\tikzset{sum/.style n args={4}{
+    draw,
+    circle,
+    minimum width=6mm,
+    path picture={
+        \draw[black] 
+            (path picture bounding box.south east) -- (path picture bounding box.north west)
+            (path picture bounding box.south west) -- (path picture bounding box.north east);
+        \node at ($(path picture bounding box.south)+(0,0.13)$)     {\tiny \ensuremath{#2}};
+        \node at ($(path picture bounding box.west)+(0.13,0)$)      {\tiny \ensuremath{#1}};
+        \node at ($(path picture bounding box.north)+(0,-0.13)$)    {\tiny \ensuremath{#4}};
+        \node at ($(path picture bounding box.east)+(-0.13,0)$)     {\tiny \ensuremath{#3}};
+        }
+    }
+}
+
+% New units - siunitx -------------------------------------
+
+\DeclareSIUnit{\pu}{\text{p.u.}}
+
 % Tabularx ------------------------------------------------
 
 \renewcommand{\arraystretch}{1.2}
@@ -214,7 +255,6 @@
 \definecolor{covertext}{cmyk}{0.00,0.00,0.00,0.90}
 \definecolor{coverfront}{cmyk}{0.00,0.00,0.00,0.75}
 \definecolor{coverback}{cmyk}{0.66,0.00,0.00,0.40}
-%\definecolor{coverback}{HTML}{e0b800}
 
 % Listing -------------------------------------------------
 
@@ -265,6 +305,8 @@
     \renewcommand\baselinestretch{1.5}
     \setlength{\parskip}{6pt}
 }
+
+\newcommand{\topic}[1]{\noindent\textbf{#1:}}
 
 % Mathematical commands -----------------------------------
 

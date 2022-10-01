@@ -337,6 +337,7 @@ def jacobi(A,b,N=25,x=None):
         \item Multiplicação de quantidades: \lstinline[language=teX,style=code]|\qtyproduct{5.0 x 8.5}{\meter}| -- \qtyproduct{5.0 x 8.5}{\meter}
         \item Lista de quantidades: \lstinline[language=teX,style=code]|\qtylist{100;240;360}{\ohm}| -- \qtylist{100;240;360}{\ohm}
         \item Números complexos: \lstinline[language=teX,style=code]|\complexnum{10+i5}| -- \complexnum{10+i5}
+        \item Números complexos polares: \lstinline[language=teX,style=code]|\complexnum{127:-30}| -- \complexnum{127:-30}
         \item Quantidade complexa: \lstinline[language=teX,style=code]|\complexqty{15-i36}{\mili\ohm}| -- \complexqty{15-i36}{\milli\ohm}
     \end{itemize}
 
@@ -365,4 +366,118 @@ def jacobi(A,b,N=25,x=None):
         }
         \caption{Circuito}
         \label{fig:circuito}
+    \end{figure}
+
+% Diagrama de blocos ======================================
+
+\section{Diagrama de Blocos}
+\label{sec:diagrama_blocos}
+
+    O pacote TiKz permite criar diagrama de blocos, de forma que esses podem ser utilizados para representar sistemas de controle.
+    As figuras \ref{fig:blocos_exemplo}, \ref{fig:blocos_exemplo1}, \ref{fig:blocos_exemplo2}, e \ref{fig:blocos_exemplo3} apresentam alguns exemplos.
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[auto, node distance=20mm,>=latex']
+            % Elementos linha principal
+            \node[input] (input) {};
+            \node[sum={+}{-}{}{}, right of=input] (sum) {};
+            \node[block, right of=sum] (system) {$G(s)$};
+            \node[output, right of=system] (output) {};
+            % Conexões linha principal
+            \draw[->] (input) -- node[name=R]{$R(s)$} (sum);
+            \draw[->] (sum) -- node[name=E]{} (system);
+            \draw[->] (system) -- node[name=C]{$C(s)$} (output);
+            % Realimentação
+            \node[block, below of=system] (sensor) {$H(s)$};
+            \draw[->] (C) |- (sensor);
+            \draw[->] (sensor) -| node[near end,name=B]{} (sum);
+
+        \end{tikzpicture}
+        \caption{Diagrama de blocos -- Exemplo básico}
+        \label{fig:blocos_exemplo}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[auto, node distance=2cm,>=latex']
+            % Elementos linha principal
+            \node[input] (input) {};
+            \node[sum={+}{-}{}{}, right of=input] (sum) {};
+            \node[block, right of=sum] (controller) {$G_c(s)$};
+            \node[block, right of=controller, node distance=25mm] (system) {$G_p(s)$};
+            \node[output, right of=system] (output) {};
+            % Conexões linha principal
+            \draw[->] (input) -- node[name=R]{$R(s)$} (sum);
+            \draw[->] (sum) -- node[name=E]{$E(s)$} (controller);
+            \draw[->] (controller) -- node[name=U] {$U(s)$} (system);
+            \draw[->] (system) -- node[name=C]{$C(s)$} (output);
+            % Realimentação
+            \node[block, below of=U] (sensor) {$H(s)$};
+            \draw[->] (C) |- (sensor);
+            \draw[->] (sensor) -| node[near end,name=B]{$B(s)$} (sum);
+
+        \end{tikzpicture}
+        \caption{Diagrama de blocos -- Exemplo com realimentação}
+        \label{fig:blocos_exemplo1}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[auto, node distance=2cm,>=latex']
+            % Elementos linha principal
+            \node[input] (input) {};
+            \node[sum={+}{-}{}{}, right of=input] (sum) {};
+            \node[block, right of=sum] (controller) {$\frac{1}{s}$};
+            \node[sum={+}{}{}{+}, right of=controller, node distance=15mm] (sumP) {};
+            \node[block, right of=sumP] (system) {$\frac{1}{s+1}$};
+            \node[output, right of=system] (output) {};
+            % Conexões linha principal
+            \draw[->] (input) -- node[name=R]{$R(s)$} (sum);
+            \draw[->] (sum) -- node[name=E]{$E(s)$} (controller);
+            \draw[->] (controller) -- node[name=U] {} (sumP);
+            \draw[->] (sumP) -- node[name=UP] {} (system);
+            \draw[->] (system) -- node[name=C]{$C(s)$} (output);
+            % Realimentação
+            \node[block, below of=sumP] (sensor) {$\frac{1}{s+4}$};
+            \draw[->] (C) |- (sensor);
+            \draw[->] (sensor) -| node[near end,name=B]{$B(s)$} (sum);
+            % Pertubação
+            \node[input, above of=sumP] (inputP) {};
+            \draw[->] (inputP) -- node[near start, name=P]{$P(s)$} (sumP);
+        \end{tikzpicture}
+        \caption{Diagrama de blocos -- Exemplo com perturbação}
+        \label{fig:blocos_exemplo2}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[auto, node distance=2cm,>=latex']
+            % We start by placing the blocks
+            \node [input] (input) {};
+            \node [sum={+}{-}{}{}, right of=input] (sum) {};
+            \node [block, right of=sum] (controller) {$G_c(s)$};
+            \node [block, right of=controller,
+                    node distance=3cm] (system) {$\frac{1}{s^2+1s+9}$};
+            % We draw an edge between the controller and system block to 
+            % calculate the coordinate u. We need it to place the measurement block. 
+            \draw [draw,->] (controller) -- node[name=u] {$U$} (system);
+            \node [sum={+}{}{}{+}, right of=system, node distance=2cm] (disturbance) {};
+            \node [block, above of=disturbance] (g_d) {$G_d(s)$};
+            \node [input, left of=g_d] (dist_input){$D$};
+            \node [output, right of=disturbance] (output) {};
+            \node [block, below of=u] (measurements) {$G_m(s)$};
+        
+            % Once the nodes are placed, connecting them is easy. 
+            \draw [->] (input) -- node {$R(s)$} (sum);
+            \draw [->] (sum) -- node {$E$} (controller);
+            \draw [->] (system) -- node {$Y_u$} (disturbance);
+            \draw [->] (disturbance) -- node [name=y] {$Y$}(output);
+            \draw [->] (g_d) -- node {$Y_d$} (disturbance);
+            \draw [->] (dist_input) -- node {$D$} (g_d);
+            \draw [->] (y) |- (measurements);
+            \draw [->] (measurements) -| node [near end] {$Y_m$} (sum);
+        \end{tikzpicture}
+        \caption{Diagrama de blocos -- Exemplo sistema complexo}
+        \label{fig:blocos_exemplo3}
     \end{figure}
